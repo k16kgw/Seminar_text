@@ -1,0 +1,30 @@
+[project]
+name = "modeling-seminar"
+version = "0.1.0"
+description = "卒業研究準備セミナー：数理モデリングとシミュレーション（学部4年生向け教材）"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Keiichiro Kagawa", email = "kkagawa@josai.ac.jp" },
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "pandas",
+    "scikit-image",
+    "networkx",
+    "jupyter",
+    "nbconvert",
+    "nbformat",
+    "nbclient",
+    "ipykernel",
+    "pytest",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

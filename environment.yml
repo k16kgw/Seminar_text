@@ -1,0 +1,20 @@
+name: modeling-seminar
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - scikit-image
+  - networkx
+  - jupyter
+  - nbconvert
+  - nbformat
+  - nbclient
+  - ipykernel
+  - pytest
+  - pip
+  - pip:
+      - mystmd

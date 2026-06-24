@@ -1,0 +1,21 @@
+# MyST build output
+_build/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Node (only mystmd is global; keep local node_modules ignored just in case)
+node_modules/

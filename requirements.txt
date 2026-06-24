@@ -1,0 +1,12 @@
+numpy
+scipy
+matplotlib
+pandas
+scikit-image
+networkx
+jupyter
+nbconvert
+nbformat
+nbclient
+ipykernel
+pytest
