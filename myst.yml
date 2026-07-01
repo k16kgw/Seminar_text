@@ -3,10 +3,12 @@ version: 1
 project:
   id: e902ddd0-000a-40d8-8d45-cd1afda84ff6
   title: 卒業研究準備セミナー：数理モデリングとシミュレーション
-  description: 力学系から熱伝導、反応拡散、マルチエージェント、恋愛モデルへ接続する学部4年生向け教材
+  description: 既習の力学系から偏微分方程式の基礎を学び、熱伝導、反応拡散、マルチエージェント、ネットワークモデルへ接続する学部4年生向け教材
   keywords:
     - 数理モデル
     - 力学系
+    - 偏微分方程式
+    - 有限差分法
     - シミュレーション
     - 反応拡散
     - マルチエージェント
@@ -22,23 +24,27 @@ project:
     headings: true
   toc:
     - file: chapters/index.md
-    - file: chapters/00_research_design.md
-    - title: ステゴサウルス背板の放熱
+    - title: 全員の共通準備
+      children:
+        - file: chapters/00_research_design.md
+        - file: chapters/00_pde_foundations.md
+    - title: 第1回（学生A）ステゴサウルス背板の放熱
       children:
         - file: chapters/01_stegosaurus_heat_basic.md
         - file: chapters/02_stegosaurus_heat_shape.md
-    - title: ヘビ模様の反応拡散
+    - title: 第2回（学生B）ヘビ模様の反応拡散
       children:
         - file: chapters/03_reaction_diffusion_basic.md
         - file: chapters/04_reaction_diffusion_snake.md
-    - title: 電車乗降のマルチエージェント
+    - title: 第3回（学生C）電車乗降のマルチエージェント
       children:
         - file: chapters/05_agent_boarding_basic.md
         - file: chapters/06_agent_boarding_behavior.md
-    - title: 恋愛モデル
+    - title: 第4回（学生D）恋愛モデル
       children:
         - file: chapters/07_love_dynamics_basic.md
         - file: chapters/08_love_dynamics_network.md
+    - file: chapters/09_synthesis.md
   settings:
     output_matplotlib_strings: remove
     output_stderr: remove-warn

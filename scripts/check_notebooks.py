@@ -1,7 +1,7 @@
 """Notebook 確認スクリプト.
 
 目的:
-- 8 個の notebook が存在し、nbformat として読み込めることを確認する（既定動作）。
+- 9 個の notebook が存在し、nbformat として読み込めることを確認する（既定動作）。
 - ``--execute`` を付けると、各 notebook を上から順に実行できるかも確認する。
 
 使い方::
@@ -25,6 +25,7 @@ import nbformat
 ROOT = Path(__file__).resolve().parents[1]
 
 NOTEBOOKS = [
+    "notebooks/00_pde_diffusion_basics.ipynb",
     "notebooks/01_stegosaurus_heat_1d_fin.ipynb",
     "notebooks/02_stegosaurus_shape_comparison.ipynb",
     "notebooks/03_reaction_diffusion_gray_scott.ipynb",

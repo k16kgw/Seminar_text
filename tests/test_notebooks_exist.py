@@ -21,6 +21,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 
 NOTEBOOKS = [
+    "00_pde_diffusion_basics.ipynb",
     "01_stegosaurus_heat_1d_fin.ipynb",
     "02_stegosaurus_shape_comparison.ipynb",
     "03_reaction_diffusion_gray_scott.ipynb",
@@ -33,6 +34,7 @@ NOTEBOOKS = [
 
 CHAPTERS = [
     "00_research_design.md",
+    "00_pde_foundations.md",
     "01_stegosaurus_heat_basic.md",
     "02_stegosaurus_heat_shape.md",
     "03_reaction_diffusion_basic.md",
@@ -41,6 +43,7 @@ CHAPTERS = [
     "06_agent_boarding_behavior.md",
     "07_love_dynamics_basic.md",
     "08_love_dynamics_network.md",
+    "09_synthesis.md",
     "index.md",
 ]
 
@@ -77,8 +80,8 @@ def test_chapter_exists(name: str) -> None:
 
 @pytest.mark.parametrize("name", CHAPTERS)
 def test_chapter_links_to_notebook(name: str) -> None:
-    if name == "index.md" or name == "00_research_design.md":
-        pytest.skip("index と共通読書資料は notebook を持たない")
+    if name in {"index.md", "00_research_design.md", "09_synthesis.md"}:
+        pytest.skip("index・研究設計・振り返りは notebook を持たない")
     path = ROOT / "chapters" / name
     text = path.read_text(encoding="utf-8")
     assert "../notebooks/" in text, f"No notebook link in chapter {name}"
