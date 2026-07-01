@@ -23,11 +23,11 @@ ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOKS = [
     "00_pde_diffusion_basics.ipynb",
     "01_stegosaurus_heat_1d_fin.ipynb",
-    "02_stegosaurus_shape_comparison.ipynb",
+    "02_stegosaurus_single_plate_2d.ipynb",
     "03_reaction_diffusion_gray_scott.ipynb",
     "04_snake_pattern_features.ipynb",
     "05_train_boarding_ca.ipynb",
-    "06_train_boarding_behavior_rules.ipynb",
+    "06_stochastic_simulation_repeats.ipynb",
     "07_love_dynamics_two_person.ipynb",
     "08_love_dynamics_network.ipynb",
 ]
@@ -37,12 +37,16 @@ CHAPTERS = [
     "00_pde_foundations.md",
     "01_stegosaurus_heat_basic.md",
     "02_stegosaurus_heat_shape.md",
+    "02_stegosaurus_research_roadmap.md",
     "03_reaction_diffusion_basic.md",
     "04_reaction_diffusion_snake.md",
+    "04_snake_research_roadmap.md",
     "05_agent_boarding_basic.md",
     "06_agent_boarding_behavior.md",
+    "06_boarding_research_roadmap.md",
     "07_love_dynamics_basic.md",
     "08_love_dynamics_network.md",
+    "08_love_research_roadmap.md",
     "09_synthesis.md",
     "index.md",
 ]
@@ -80,8 +84,16 @@ def test_chapter_exists(name: str) -> None:
 
 @pytest.mark.parametrize("name", CHAPTERS)
 def test_chapter_links_to_notebook(name: str) -> None:
-    if name in {"index.md", "00_research_design.md", "09_synthesis.md"}:
-        pytest.skip("index・研究設計・振り返りは notebook を持たない")
+    if name in {
+        "index.md",
+        "00_research_design.md",
+        "02_stegosaurus_research_roadmap.md",
+        "04_snake_research_roadmap.md",
+        "06_boarding_research_roadmap.md",
+        "08_love_research_roadmap.md",
+        "09_synthesis.md",
+    }:
+        pytest.skip("index・研究設計・卒研ロードマップ・振り返りは notebook を持たない")
     path = ROOT / "chapters" / name
     text = path.read_text(encoding="utf-8")
     assert "../notebooks/" in text, f"No notebook link in chapter {name}"

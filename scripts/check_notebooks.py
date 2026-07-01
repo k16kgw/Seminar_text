@@ -27,11 +27,11 @@ ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOKS = [
     "notebooks/00_pde_diffusion_basics.ipynb",
     "notebooks/01_stegosaurus_heat_1d_fin.ipynb",
-    "notebooks/02_stegosaurus_shape_comparison.ipynb",
+    "notebooks/02_stegosaurus_single_plate_2d.ipynb",
     "notebooks/03_reaction_diffusion_gray_scott.ipynb",
     "notebooks/04_snake_pattern_features.ipynb",
     "notebooks/05_train_boarding_ca.ipynb",
-    "notebooks/06_train_boarding_behavior_rules.ipynb",
+    "notebooks/06_stochastic_simulation_repeats.ipynb",
     "notebooks/07_love_dynamics_two_person.ipynb",
     "notebooks/08_love_dynamics_network.ipynb",
 ]
