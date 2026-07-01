@@ -51,6 +51,36 @@ CHAPTERS = [
     "index.md",
 ]
 
+INSTRUCTOR_NOTES = [
+    "README.md",
+    "01_stegosaurus_goal.md",
+    "02_snake_goal.md",
+    "03_boarding_goal.md",
+    "04_love_network_goal.md",
+]
+
+NOTEBOOK_FIGURES = [
+    "00_pde_stable_diffusion.png",
+    "00_pde_stability_comparison.png",
+    "01_fin_temperature.png",
+    "01_fin_performance.png",
+    "02_single_plate_temperature.png",
+    "02_plate_h_sensitivity.png",
+    "03_gray_scott_pattern.png",
+    "03_gray_scott_parameter_comparison.png",
+    "04_synthetic_patterns.png",
+    "04_pattern_spectra.png",
+    "05_boarding_states.png",
+    "05_boarding_count_sweep.png",
+    "06_bottleneck_trace.png",
+    "06_repeat_distribution.png",
+    "07_two_person_timeseries.png",
+    "07_two_person_phase_portrait.png",
+    "08_network_graph.png",
+    "08_network_timeseries.png",
+    "08_network_stability.png",
+]
+
 
 @pytest.mark.parametrize("name", NOTEBOOKS)
 def test_notebook_exists_and_valid(name: str) -> None:
@@ -97,3 +127,23 @@ def test_chapter_links_to_notebook(name: str) -> None:
     path = ROOT / "chapters" / name
     text = path.read_text(encoding="utf-8")
     assert "../notebooks/" in text, f"No notebook link in chapter {name}"
+
+
+@pytest.mark.parametrize("name", INSTRUCTOR_NOTES)
+def test_instructor_note_exists_but_is_hidden_from_toc(name: str) -> None:
+    path = ROOT / "instructor_notes" / name
+    assert path.exists(), f"Missing instructor note: {path}"
+
+    myst = (ROOT / "myst.yml").read_text(encoding="utf-8")
+    active_toc = "\n".join(
+        line for line in myst.splitlines() if not line.lstrip().startswith("#")
+    )
+    assert f"instructor_notes/{name}" not in active_toc, (
+        f"Instructor note must stay hidden from active MyST toc: {name}"
+    )
+
+
+@pytest.mark.parametrize("name", NOTEBOOK_FIGURES)
+def test_exported_notebook_figure_exists(name: str) -> None:
+    path = ROOT / "assets" / "figures" / "notebook" / name
+    assert path.exists() and path.stat().st_size > 0, f"Missing notebook figure: {path}"

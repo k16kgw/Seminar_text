@@ -49,6 +49,15 @@ project:
         - file: chapters/08_love_dynamics_network.md
         - file: chapters/08_love_research_roadmap.md
     - file: chapters/09_synthesis.md
+    # 教員用ノートは通常サイトでは非表示にする。
+    # 必要なときだけ、以下のコメントを外して教員限定ビルドで使用する。
+    # - title: 教員用：卒研ゴールの目安
+    #   children:
+    #     - file: instructor_notes/README.md
+    #     - file: instructor_notes/01_stegosaurus_goal.md
+    #     - file: instructor_notes/02_snake_goal.md
+    #     - file: instructor_notes/03_boarding_goal.md
+    #     - file: instructor_notes/04_love_network_goal.md
   settings:
     output_matplotlib_strings: remove
     output_stderr: remove-warn
