@@ -22,6 +22,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 NOTEBOOKS = [
     "10_pde_diffusion_basics.ipynb",
+    "20_pattern_foundations.ipynb",
+    "30_agent_foundations.ipynb",
+    "40_network_foundations.ipynb",
     "11_stegosaurus_heat_1d_fin.ipynb",
     "12_stegosaurus_single_plate_2d.ipynb",
     "21_reaction_diffusion_gray_scott.ipynb",
@@ -65,6 +68,11 @@ INSTRUCTOR_NOTES = [
 NOTEBOOK_FIGURES = [
     "10_pde_stable_diffusion.png",
     "10_pde_stability_comparison.png",
+    "20_reaction_diffusion_separation.png",
+    "30_update_comparison.png",
+    "30_random_conflicts.png",
+    "40_graph_matrix.png",
+    "40_one_step_update.png",
     "11_fin_temperature.png",
     "11_fin_performance.png",
     "12_single_plate_temperature.png",
@@ -120,9 +128,6 @@ def test_chapter_links_to_notebook(name: str) -> None:
     if name in {
         "index.md",
         "00_research_design.md",
-        "20_pattern_foundations.md",
-        "30_agent_foundations.md",
-        "40_network_foundations.md",
         "13_stegosaurus_research_roadmap.md",
         "23_snake_research_roadmap.md",
         "33_boarding_research_roadmap.md",

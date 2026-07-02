@@ -19,6 +19,17 @@ EXPORTS: dict[str, list[tuple[str, str]]] = {
         ("stable-code", "10_pde_stable_diffusion.png"),
         ("unstable-code", "10_pde_stability_comparison.png"),
     ],
+    "20_pattern_foundations.ipynb": [
+        ("comparison", "20_reaction_diffusion_separation.png"),
+    ],
+    "30_agent_foundations.ipynb": [
+        ("update-comparison", "30_update_comparison.png"),
+        ("random-trials", "30_random_conflicts.png"),
+    ],
+    "40_network_foundations.ipynb": [
+        ("network-representation", "40_graph_matrix.png"),
+        ("one-step", "40_one_step_update.png"),
+    ],
     "11_stegosaurus_heat_1d_fin.ipynb": [
         ("cell-0008", "11_fin_temperature.png"),
         ("cell-0010", "11_fin_performance.png"),
