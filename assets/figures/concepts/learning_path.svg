@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" role="img" aria-labelledby="title desc">
+  <title id="title">教材から卒業研究へ進む学習経路</title>
+  <desc id="desc">卒研の準備、基礎モデル、研究技能、卒研ロードマップ、学生自身の研究を順に示す。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#425466"/></marker>
+    <style>.h{font:700 24px sans-serif;fill:#183153}.t{font:18px sans-serif;fill:#25364a}.s{font:15px sans-serif;fill:#52657a}.box{stroke-width:2;rx:14}.a{stroke:#425466;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1100" height="420" fill="#f8fbff"/>
+  <text x="550" y="42" text-anchor="middle" class="h">教材を「完成例」ではなく研究の足場として使う</text>
+  <g transform="translate(35 95)">
+    <rect class="box" width="180" height="130" fill="#e8f1ff" stroke="#3973b8"/>
+    <text x="90" y="38" text-anchor="middle" class="t">卒研の準備</text><text x="90" y="70" text-anchor="middle" class="s">研究設計</text><text x="90" y="94" text-anchor="middle" class="s">各モデルの入口</text>
+  </g>
+  <path class="a" d="M220 160 H260"/>
+  <g transform="translate(265 95)">
+    <rect class="box" width="180" height="130" fill="#e9f8ef" stroke="#2f8f5b"/>
+    <text x="90" y="38" text-anchor="middle" class="t">基礎モデル</text><text x="90" y="70" text-anchor="middle" class="s">最小の式</text><text x="90" y="94" text-anchor="middle" class="s">標準設定の再現</text>
+  </g>
+  <path class="a" d="M450 160 H490"/>
+  <g transform="translate(495 95)">
+    <rect class="box" width="180" height="130" fill="#fff5dd" stroke="#c88a18"/>
+    <text x="90" y="38" text-anchor="middle" class="t">研究技能</text><text x="90" y="70" text-anchor="middle" class="s">測る・比較する</text><text x="90" y="94" text-anchor="middle" class="s">数値検証する</text>
+  </g>
+  <path class="a" d="M680 160 H720"/>
+  <g transform="translate(725 95)">
+    <rect class="box" width="180" height="130" fill="#f4ecff" stroke="#7b55b5"/>
+    <text x="90" y="38" text-anchor="middle" class="t">ロードマップ</text><text x="90" y="70" text-anchor="middle" class="s">必要な段階を参照</text><text x="90" y="94" text-anchor="middle" class="s">判断を記録</text>
+  </g>
+  <path class="a" d="M910 160 H950"/>
+  <g transform="translate(955 95)">
+    <rect class="box" width="110" height="130" fill="#ffecef" stroke="#c94c62"/>
+    <text x="55" y="42" text-anchor="middle" class="t">卒研</text><text x="55" y="74" text-anchor="middle" class="s">拡張</text><text x="55" y="98" text-anchor="middle" class="s">考察</text>
+  </g>
+  <path d="M1010 240 C1010 330 815 345 815 240" fill="none" stroke="#7b55b5" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+  <text x="920" y="330" text-anchor="middle" class="s">迷ったら必要な段階へ戻る</text>
+  <text x="550" y="390" text-anchor="middle" class="t">予想する → 式・規則を読む → 図で確かめる → 検証する → 自分の研究へ移す</text>
+</svg>

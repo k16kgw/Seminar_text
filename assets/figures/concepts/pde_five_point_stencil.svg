@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470" role="img" aria-labelledby="title desc">
+  <title id="title">2次元ラプラシアンの5点差分</title>
+  <desc id="desc">中央格子点と上下左右の4点を色分けし、5点差分式との対応を示す。</desc>
+  <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0v6l8-3z" fill="#42637d"/></marker><style>.g{stroke:#b5c4d3;stroke-width:2}.n{fill:#dceeff;stroke:#3274a8;stroke-width:3}.c{fill:#ffdb8a;stroke:#b87500;stroke-width:4}.t{font:20px sans-serif;fill:#20364b}.s{font:17px sans-serif;fill:#4f6477}</style></defs>
+  <rect width="1000" height="470" fill="#fbfdff"/>
+  <text x="500" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">5点差分は「中央」と「上下左右」を参照する</text>
+  <g transform="translate(60 70)">
+    <g class="g"><path d="M0 0H360M0 90H360M0 180H360M0 270H360M0 360H360"/><path d="M0 0V360M90 0V360M180 0V360M270 0V360M360 0V360"/></g>
+    <circle cx="180" cy="180" r="28" class="c"/><text x="180" y="187" text-anchor="middle" class="t">uᵢⱼ</text>
+    <circle cx="90" cy="180" r="26" class="n"/><text x="90" y="187" text-anchor="middle" class="t">左</text>
+    <circle cx="270" cy="180" r="26" class="n"/><text x="270" y="187" text-anchor="middle" class="t">右</text>
+    <circle cx="180" cy="90" r="26" class="n"/><text x="180" y="97" text-anchor="middle" class="t">上</text>
+    <circle cx="180" cy="270" r="26" class="n"/><text x="180" y="277" text-anchor="middle" class="t">下</text>
+    <path d="M145 180H123M215 180H237M180 145V123M180 215V237" stroke="#42637d" stroke-width="3" marker-end="url(#a)"/>
+  </g>
+  <g transform="translate(485 105)">
+    <text x="235" y="0" text-anchor="middle" class="t">周囲4点の合計 − 中央の4倍</text>
+    <rect x="0" y="35" width="470" height="110" rx="14" fill="#edf5fb" stroke="#6c8ba5" stroke-width="2"/>
+    <text x="235" y="82" text-anchor="middle" style="font:22px serif;fill:#1d3145">Δuᵢⱼ ≈</text>
+    <text x="235" y="118" text-anchor="middle" style="font:20px serif;fill:#1d3145">(uᵢ₊₁,ⱼ + uᵢ₋₁,ⱼ + uᵢ,ⱼ₊₁ + uᵢ,ⱼ₋₁ − 4uᵢⱼ) / Δx²</text>
+    <g transform="translate(0 185)">
+      <circle cx="25" cy="10" r="13" class="c"/><text x="50" y="16" class="s">中央が周囲より高い → Δu &lt; 0 → 次に下がる</text>
+      <circle cx="25" cy="65" r="13" class="n"/><text x="50" y="71" class="s">中央が周囲より低い → Δu &gt; 0 → 次に上がる</text>
+    </g>
+  </g>
+</svg>

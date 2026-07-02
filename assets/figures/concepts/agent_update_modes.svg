@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="430" viewBox="0 0 1050 430" role="img" aria-labelledby="title desc">
+  <title id="title">逐次更新と一斉更新の違い</title>
+  <desc id="desc">2人が同じセルを目指すとき、逐次更新は先に処理した人が入り、一斉更新は希望を集めて競合を解決する。</desc>
+  <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0v6l8-3z" fill="#425c72"/></marker><style>.t{font:20px sans-serif;fill:#21364a}.s{font:16px sans-serif;fill:#52677a}.grid{stroke:#8fa4b7;stroke-width:2;fill:#fff}.p{stroke:#425c72;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
+  <rect width="1050" height="430" fill="#fbfdff"/>
+  <text x="525" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">同じ初期状態でも更新方式で次状態が変わる</text>
+  <g transform="translate(35 85)">
+    <text x="130" y="0" text-anchor="middle" class="t">更新前</text>
+    <g transform="translate(40 25)"><rect class="grid" width="180" height="180"/><path d="M60 0V180M120 0V180M0 60H180M0 120H180" class="grid"/><circle cx="30" cy="90" r="22" fill="#3d83c5"/><text x="30" y="97" text-anchor="middle" fill="white" class="t">A</text><circle cx="150" cy="90" r="22" fill="#d95f6b"/><text x="150" y="97" text-anchor="middle" fill="white" class="t">B</text><rect x="69" y="69" width="42" height="42" rx="6" fill="#ffe19a" stroke="#b17b15" stroke-width="3"/><path class="p" d="M55 90H67"/><path class="p" d="M125 90H113"/></g>
+    <text x="130" y="235" text-anchor="middle" class="s">AとBが中央を希望</text>
+  </g>
+  <path class="p" d="M300 195H350"/>
+  <g transform="translate(360 75)">
+    <rect width="290" height="285" rx="16" fill="#eef7ff" stroke="#3979ad" stroke-width="2"/>
+    <text x="145" y="35" text-anchor="middle" class="t">逐次更新</text>
+    <text x="145" y="65" text-anchor="middle" class="s">Aを先に処理した例</text>
+    <g transform="translate(55 85)"><rect class="grid" width="180" height="120"/><path d="M60 0V120M120 0V120M0 60H180" class="grid"/><circle cx="90" cy="30" r="22" fill="#3d83c5"/><text x="90" y="37" text-anchor="middle" fill="white" class="t">A</text><circle cx="150" cy="30" r="22" fill="#d95f6b"/><text x="150" y="37" text-anchor="middle" fill="white" class="t">B</text></g>
+    <text x="145" y="240" text-anchor="middle" class="s">先に処理したAが中央を確保</text>
+  </g>
+  <path class="p" d="M660 195H710"/>
+  <g transform="translate(720 75)">
+    <rect width="295" height="285" rx="16" fill="#f5efff" stroke="#7b5aae" stroke-width="2"/>
+    <text x="148" y="35" text-anchor="middle" class="t">一斉更新</text>
+    <text x="148" y="65" text-anchor="middle" class="s">希望を集めて競合解決</text>
+    <g transform="translate(58 85)"><rect class="grid" width="180" height="120"/><path d="M60 0V120M120 0V120M0 60H180" class="grid"/><circle cx="30" cy="30" r="20" fill="#3d83c5" opacity=".45"/><circle cx="150" cy="30" r="20" fill="#d95f6b" opacity=".45"/><circle cx="90" cy="30" r="22" fill="#7b5aae"/><text x="90" y="37" text-anchor="middle" fill="white" class="t">?</text></g>
+    <text x="148" y="235" text-anchor="middle" class="s">無作為・優先・全員停止など</text><text x="148" y="258" text-anchor="middle" class="s">競合規則を明記する</text>
+  </g>
+  <text x="525" y="405" text-anchor="middle" class="t">更新順序は実装上の都合ではなく、モデルの仮定</text>
+</svg>

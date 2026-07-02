@@ -62,6 +62,10 @@ M=\begin{pmatrix}a&b\\c&d\end{pmatrix}
 
 となる。
 
+![2変数線形ODEの自己作用と相互作用を係数行列へ対応させた図。](../assets/figures/concepts/two_person_coupling.svg)
+
+上段の矢印 $c$ は $R$ から $J$ の変化率へ、下段の矢印 $b$ は $J$ から $R$ の変化率へ入る。矢印の向きと行列要素の位置を照合する。
+
 ## 係数を読む
 
 - $a,d$：各状態が自分自身から受ける影響

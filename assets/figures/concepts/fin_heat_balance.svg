@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+  <title id="title">1次元フィンの熱収支</title>
+  <desc id="desc">根元から伝導で入る熱がフィン内部を進み、表面から対流で周囲へ逃げる。</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#436178"/></marker><marker id="r" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#d65d47"/></marker><style>.t{font:20px sans-serif;fill:#20364a}.s{font:16px sans-serif;fill:#53677a}.q{stroke:#d65d47;stroke-width:4;fill:none;marker-end:url(#r)}.a{stroke:#436178;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
+  <rect width="1000" height="420" fill="#fbfdff"/>
+  <text x="500" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">根元から入った熱は、内部を伝わりながら表面から逃げる</text>
+  <rect x="55" y="100" width="90" height="230" rx="8" fill="#e85f49"/><text x="100" y="215" text-anchor="middle" fill="white" class="t">体部</text>
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#f26b4f"/><stop offset="1" stop-color="#f4d98d"/></linearGradient></defs>
+  <path d="M145 160H850L900 215L850 270H145Z" fill="url(#g)" stroke="#8e7042" stroke-width="3"/>
+  <text x="510" y="222" text-anchor="middle" class="t">フィン内部の熱伝導  −kA dT/dx</text>
+  <path class="q" d="M165 215H270"/><text x="210" y="195" text-anchor="middle" class="s">根元から流入</text>
+  <g class="a"><path d="M320 155V95"/><path d="M470 155V95"/><path d="M620 155V95"/><path d="M770 155V95"/><path d="M320 275V335"/><path d="M470 275V335"/><path d="M620 275V335"/><path d="M770 275V335"/></g>
+  <text x="545" y="80" text-anchor="middle" class="t">表面から対流 hP(T − T∞)</text>
+  <text x="545" y="375" text-anchor="middle" class="s">先へ進むほど熱が周囲へ失われ、温度差が小さくなる</text>
+  <text x="910" y="220" class="s">先端</text>
+</svg>

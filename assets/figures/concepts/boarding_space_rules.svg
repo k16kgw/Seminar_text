@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="450" viewBox="0 0 1050 450" role="img" aria-labelledby="title desc">
+  <title id="title">乗降セルオートマトンの空間と規則</title>
+  <desc id="desc">車内、ドア、ホームを格子で示し、降車客と乗車客の進行方向、1セル1人の排他則を示す。</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#405d73"/></marker><style>.t{font:20px sans-serif;fill:#20364a}.s{font:16px sans-serif;fill:#52677a}.g{stroke:#a6b6c4;stroke-width:1.5}.a{stroke:#405d73;stroke-width:4;fill:none;marker-end:url(#a)}</style></defs>
+  <rect width="1050" height="450" fill="#fbfdff"/>
+  <text x="525" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">空間・エージェント・更新規則を別々に定義する</text>
+  <g transform="translate(45 80)">
+    <rect width="650" height="150" fill="#e8f3ff" stroke="#4279a5" stroke-width="3"/><text x="25" y="30" class="t">車内</text>
+    <rect y="150" width="650" height="70" fill="#fff2cf" stroke="#bd8722" stroke-width="3"/><text x="25" y="193" class="t">ホーム</text>
+    <rect x="275" y="130" width="100" height="90" fill="#fff" stroke="#d25e4f" stroke-width="5"/><text x="325" y="245" text-anchor="middle" class="s">ドア</text>
+    <g class="g"><path d="M50 0V220M100 0V220M150 0V220M200 0V220M250 0V220M300 0V220M350 0V220M400 0V220M450 0V220M500 0V220M550 0V220M600 0V220"/><path d="M0 50H650M0 100H650M0 150H650M0 200H650"/></g>
+    <circle cx="325" cy="75" r="19" fill="#d95f65"/><text x="325" y="82" text-anchor="middle" fill="white" class="t">降</text>
+    <circle cx="325" cy="195" r="19" fill="#3c83c5"/><text x="325" y="202" text-anchor="middle" fill="white" class="t">乗</text>
+    <path class="a" d="M300 100V150"/><path class="a" d="M350 190V140"/>
+  </g>
+  <g transform="translate(745 95)">
+    <rect width="260" height="260" rx="16" fill="#f4f7fa" stroke="#71889a" stroke-width="2"/>
+    <text x="130" y="36" text-anchor="middle" class="t">1ステップの規則</text>
+    <text x="30" y="82" class="s">① 近傍から候補を選ぶ</text>
+    <text x="30" y="122" class="s">② 同じセルの競合を解く</text>
+    <text x="30" y="162" class="s">③ 確定した移動を反映</text>
+    <rect x="30" y="195" width="200" height="42" rx="8" fill="#ffe9e8" stroke="#c35f59"/>
+    <text x="130" y="222" text-anchor="middle" class="t">1セルに1人</text>
+  </g>
+  <text x="525" y="420" text-anchor="middle" class="t">見た目のアニメーションより先に、領域と規則を文章化する</text>
+</svg>

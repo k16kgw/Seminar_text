@@ -61,6 +61,10 @@ rng = np.random.default_rng(seed)
 
 完了時間を確率変数 $T$ とする。反復結果 $T_1,\ldots,T_n$ から
 
+![固定条件のもとでseedだけを変え、結果を分布として比較する反復実験。](../assets/figures/concepts/repeated_simulation.svg)
+
+左の条件は反復中に変えない。中央でseedだけを変えて複数の完了時間を得て、右の分布として基準条件と代替条件を比べる。
+
 ```{math}
 \bar T=\frac{1}{n}\sum_{i=1}^n T_i
 ```

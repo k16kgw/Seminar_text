@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+  <title id="title">薄板モデルの領域と境界条件</title>
+  <desc id="desc">板の内部、固定温度の根元、対流する側面と先端、板の外部を色分けする。</desc>
+  <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0v6l8-3z" fill="#47708c"/></marker><style>.t{font:20px sans-serif;fill:#21364a}.s{font:16px sans-serif;fill:#52677a}.a{stroke:#47708c;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
+  <rect width="1000" height="440" fill="#f3f8fb"/>
+  <text x="500" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">形状マスクの内外と境界条件を分ける</text>
+  <rect x="110" y="90" width="480" height="280" fill="#fff4dd" stroke="#b98a35" stroke-width="4"/>
+  <rect x="110" y="320" width="480" height="50" fill="#ee6453"/>
+  <text x="350" y="220" text-anchor="middle" class="t">板の内部 Ω</text><text x="350" y="250" text-anchor="middle" class="s">熱伝導：kΔT</text>
+  <text x="350" y="352" text-anchor="middle" fill="white" class="t">根元：T = Tᵦ（固定温度）</text>
+  <g class="a"><path d="M105 150H55"/><path d="M105 230H55"/><path d="M595 150H645"/><path d="M595 230H645"/><path d="M220 85V50"/><path d="M350 85V50"/><path d="M480 85V50"/></g>
+  <text x="350" y="410" text-anchor="middle" class="s">側面・先端：−k ∂T/∂n = h(T − T∞)</text>
+  <g transform="translate(690 105)">
+    <rect width="250" height="230" rx="14" fill="#fff" stroke="#8aa0b3" stroke-width="2"/>
+    <text x="125" y="38" text-anchor="middle" class="t">計算で区別するもの</text>
+    <rect x="25" y="65" width="35" height="25" fill="#fff4dd" stroke="#b98a35"/><text x="75" y="84" class="s">内部セル</text>
+    <rect x="25" y="110" width="35" height="25" fill="#ee6453"/><text x="75" y="129" class="s">根元セル</text>
+    <path d="M25 165H60" stroke="#47708c" stroke-width="4"/><text x="75" y="171" class="s">対流境界</text>
+    <rect x="25" y="190" width="35" height="25" fill="#f3f8fb" stroke="#a8b8c5"/><text x="75" y="209" class="s">形状の外部</text>
+  </g>
+</svg>

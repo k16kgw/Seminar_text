@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="430" viewBox="0 0 1050 430" role="img" aria-labelledby="title desc">
+  <title id="title">模様を数値へ変える観察量</title>
+  <desc id="desc">同じ模様から面積比、連結成分数、特徴波長、方向を測る様子。</desc>
+  <style>.t{font:19px sans-serif;fill:#21364a}.s{font:15px sans-serif;fill:#52677a}.b{stroke:#6e8294;stroke-width:2;rx:12}</style>
+  <rect width="1050" height="430" fill="#fbfdff"/>
+  <text x="525" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">「似ている」を、異なる問いに答える複数の量へ分ける</text>
+  <g transform="translate(35 85)">
+    <rect class="b" width="220" height="255" fill="#18334b"/>
+    <circle cx="45" cy="55" r="22" fill="#ffc960"/><circle cx="110" cy="42" r="14" fill="#ffc960"/><circle cx="170" cy="70" r="28" fill="#ffc960"/><circle cx="70" cy="135" r="30" fill="#ffc960"/><circle cx="155" cy="145" r="20" fill="#ffc960"/><circle cx="115" cy="210" r="25" fill="#ffc960"/>
+    <text x="110" y="290" text-anchor="middle" class="t">入力する模様</text>
+  </g>
+  <g transform="translate(295 85)">
+    <rect class="b" width="160" height="255" fill="#eef6ff"/><text x="80" y="38" text-anchor="middle" class="t">面積比</text>
+    <rect x="35" y="65" width="90" height="120" fill="#18334b"/><rect x="35" y="137" width="90" height="48" fill="#ffc960"/>
+    <text x="80" y="215" text-anchor="middle" class="s">明るい画素</text><text x="80" y="238" text-anchor="middle" class="s">÷ 全画素</text>
+  </g>
+  <g transform="translate(475 85)">
+    <rect class="b" width="160" height="255" fill="#f0faef"/><text x="80" y="38" text-anchor="middle" class="t">個数</text>
+    <circle cx="50" cy="85" r="16" fill="#53a86b"/><circle cx="110" cy="85" r="12" fill="#53a86b"/><circle cx="70" cy="135" r="20" fill="#53a86b"/><circle cx="115" cy="165" r="14" fill="#53a86b"/>
+    <text x="80" y="215" text-anchor="middle" class="s">連結している</text><text x="80" y="238" text-anchor="middle" class="s">領域を数える</text>
+  </g>
+  <g transform="translate(655 85)">
+    <rect class="b" width="160" height="255" fill="#fff7e7"/><text x="80" y="38" text-anchor="middle" class="t">特徴波長</text>
+    <path d="M20 115C35 55 50 175 65 115S95 55 110 115S140 175 150 115" fill="none" stroke="#d28a23" stroke-width="4"/>
+    <path d="M35 175H95" stroke="#687d8e" stroke-width="3"/><path d="M35 168V182M95 168V182" stroke="#687d8e" stroke-width="3"/>
+    <text x="65" y="205" text-anchor="middle" class="s">間隔 λ</text>
+  </g>
+  <g transform="translate(835 85)">
+    <rect class="b" width="180" height="255" fill="#f5efff"/><text x="90" y="38" text-anchor="middle" class="t">方向</text>
+    <g stroke="#8059b0" stroke-width="10"><path d="M25 185L110 65"/><path d="M65 205L150 85"/><path d="M110 215L165 138"/></g>
+    <path d="M35 220L145 220" stroke="#4d6376" stroke-width="3"/><text x="90" y="245" text-anchor="middle" class="s">縞の向き</text>
+  </g>
+  <text x="525" y="400" text-anchor="middle" class="t">1つの特徴量だけでは区別できない模様がある</text>
+</svg>
