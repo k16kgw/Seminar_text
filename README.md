@@ -83,6 +83,8 @@
 
 Notebookの図は章本文にも掲載し，軸，色，曲線，読み取れること，誤読しやすい点を解説しています．Notebookを手元で実行できない場合も，本文から図の意味を確認できます．
 
+本文では，定義だけでなく，手で追える数値例，式の各項の意味，単位確認，計算結果を検証する順序も説明しています．数式を読んだ後は小さな例を自分で計算し，Notebookの出力と対応づけてください．
+
 概念図の編集用元データは，[concept_diagrams_editable.pptx](assets/figures/concepts/concept_diagrams_editable.pptx)にまとめています．文字，箱，矢印，格子点などはPowerPoint上で個別に編集できます．再生成方法は[概念図README](assets/figures/concepts/README.md)を参照してください．
 
 学習速度に応じて，1回に進む章数や扱う発展課題は調整できます．前段階のチェックポイントを満たしてから卒研ロードマップへ進みます．
