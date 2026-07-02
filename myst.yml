@@ -24,10 +24,13 @@ project:
     headings: true
   toc:
     - file: chapters/index.md
-    - title: 全員の共通準備
+    - title: 卒研の準備
       children:
         - file: chapters/00_research_design.md
         - file: chapters/00_pde_foundations.md
+        - file: chapters/00_pattern_foundations.md
+        - file: chapters/00_agent_foundations.md
+        - file: chapters/00_network_foundations.md
     - title: ステゴサウルス背板と放熱
       children:
         - file: chapters/01_stegosaurus_heat_basic.md

@@ -35,6 +35,9 @@ NOTEBOOKS = [
 CHAPTERS = [
     "00_research_design.md",
     "00_pde_foundations.md",
+    "00_pattern_foundations.md",
+    "00_agent_foundations.md",
+    "00_network_foundations.md",
     "01_stegosaurus_heat_basic.md",
     "02_stegosaurus_heat_shape.md",
     "02_stegosaurus_research_roadmap.md",
@@ -117,13 +120,16 @@ def test_chapter_links_to_notebook(name: str) -> None:
     if name in {
         "index.md",
         "00_research_design.md",
+        "00_pattern_foundations.md",
+        "00_agent_foundations.md",
+        "00_network_foundations.md",
         "02_stegosaurus_research_roadmap.md",
         "04_snake_research_roadmap.md",
         "06_boarding_research_roadmap.md",
         "08_love_research_roadmap.md",
         "09_synthesis.md",
     }:
-        pytest.skip("index・研究設計・卒研ロードマップ・振り返りは notebook を持たない")
+        pytest.skip("index・準備資料・卒研ロードマップ・振り返りは notebook を持たない")
     path = ROOT / "chapters" / name
     text = path.read_text(encoding="utf-8")
     assert "../notebooks/" in text, f"No notebook link in chapter {name}"
