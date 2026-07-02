@@ -3,7 +3,7 @@
   <desc id="desc">行列要素Aijを頂点jから頂点iへの影響と定義し，3頂点の矢印と行列の非零成分を対応させる．</desc>
   <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#405a71"/></marker><style>.t{font:20px sans-serif;fill:#21364b}.s{font:16px sans-serif;fill:#52677a}.e{stroke:#405a71;stroke-width:4;fill:none;marker-end:url(#a)}</style></defs>
   <rect width="1050" height="430" fill="#fbfdff"/>
-  <text x="525" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">Aᵢⱼ は「頂点 j から頂点 i へ入る影響」</text>
+  <text x="525" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">Aᵢⱼ は頂点 j から頂点 i へ入る影響の強さ</text>
   <g transform="translate(60 80)">
     <text x="190" y="10" text-anchor="middle" class="t">有向グラフ</text>
     <circle cx="190" cy="75" r="38" fill="#e7f2ff" stroke="#397ab1" stroke-width="3"/><text x="190" y="83" text-anchor="middle" class="t">1</text>
@@ -20,7 +20,7 @@
     <text x="235" y="128" text-anchor="middle" style="font:28px serif;fill:#20364b">    ⎜ 0     0   1.0 ⎟</text>
     <text x="235" y="170" text-anchor="middle" style="font:28px serif;fill:#20364b">    ⎝0.5    0    0  ⎠</text>
     <text x="235" y="260" text-anchor="middle" class="t">(A x)₁ = 0.8 x₂</text>
-    <text x="235" y="292" text-anchor="middle" class="s">第1行は「頂点1へ入る影響」</text>
+    <text x="235" y="292" text-anchor="middle" class="s">第1行は頂点1へ入る影響を表す</text>
   </g>
   <path d="M455 240H490" class="e"/>
   <text x="525" y="405" text-anchor="middle" class="t">非零要素 Aᵢⱼ を見つけたら，矢印 j → i を描く</text>
