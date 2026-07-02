@@ -26,17 +26,18 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '24'
+          package-manager-cache: false
 
       - name: Install Python dependencies
         run: |
@@ -45,7 +46,7 @@ jobs:
 
       - name: Install MyST
         run: |
-          npm install -g mystmd
+          npm install -g mystmd@1.9.0
 
       - name: Check notebooks
         run: |
@@ -53,13 +54,14 @@ jobs:
 
       - name: Build MyST HTML
         run: |
-          myst build --html
+          myst build --html --ci
+          test -f _build/html/index.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: _build/html
 
