@@ -6,7 +6,7 @@
     <style>.h{font:700 24px sans-serif;fill:#183153}.t{font:18px sans-serif;fill:#25364a}.s{font:15px sans-serif;fill:#52657a}.box{stroke-width:2;rx:14}.a{stroke:#425466;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
   </defs>
   <rect width="1100" height="420" fill="#f8fbff"/>
-  <text x="550" y="42" text-anchor="middle" class="h">教材を「完成例」ではなく研究の足場として使う</text>
+  <text x="550" y="42" text-anchor="middle" class="h">教材を完成例ではなく研究の足場として使う</text>
   <g transform="translate(35 95)">
     <rect class="box" width="180" height="130" fill="#e8f1ff" stroke="#3973b8"/>
     <text x="90" y="38" text-anchor="middle" class="t">卒研の準備</text><text x="90" y="70" text-anchor="middle" class="s">研究設計</text><text x="90" y="94" text-anchor="middle" class="s">各モデルの入口</text>

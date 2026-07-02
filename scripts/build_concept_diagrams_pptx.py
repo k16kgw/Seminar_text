@@ -6,12 +6,18 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 from pathlib import Path
+import subprocess
+import tempfile
+from zipfile import ZipFile
 
+from lxml import etree
 from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
+from pptx.oxml.xmlchemy import OxmlElement
 from pptx.util import Inches, Pt
 
 
@@ -30,6 +36,31 @@ RED = "FFECEF"
 TEAL = "EAF8F7"
 WHITE = "FFFFFF"
 BG = "FBFDFF"
+
+A14_NS = "http://schemas.microsoft.com/office/drawing/2010/main"
+MATH: dict[str, etree._Element] = {}
+
+FORMULAS = {
+    "stencil": r"\Delta u_{i,j}=\frac{u_{i+1,j}+u_{i-1,j}+u_{i,j+1}+u_{i,j-1}-4u_{i,j}}{(\Delta x)^2}",
+    "delta_negative": r"\Delta u_{i,j}<0",
+    "delta_positive": r"\Delta u_{i,j}>0",
+    "reaction": r"u\rightleftarrows v",
+    "adjacency": r"A=\begin{pmatrix}0&0.8&0\\0&0&1.0\\0.5&0&0\end{pmatrix}",
+    "matrix_action": r"(A\mathbf{x})_1=0.8x_2",
+    "base_temperature": r"T=T_b",
+    "fin_conduction": r"-kA\frac{dT}{dx}",
+    "fin_convection": r"hP(T-T_\infty)",
+    "plate_equation": r"k\Delta T",
+    "plate_root": r"T=T_b",
+    "plate_boundary": r"-k\frac{\partial T}{\partial n}=h(T-T_\infty)",
+    "seed_runs": r"\mathrm{seed}\ 1\mapsto T_1,\ldots,\mathrm{seed}\ n\mapsto T_n",
+    "state_r": r"R(t)",
+    "state_j": r"J(t)",
+    "two_person_ode": r"\frac{d}{dt}\begin{pmatrix}R\\J\end{pmatrix}=M\begin{pmatrix}R\\J\end{pmatrix}",
+    "two_person_matrix": r"M=\begin{pmatrix}a&b\\c&d\end{pmatrix}",
+    "coefficient_b": r"b",
+    "coefficient_c": r"c",
+}
 
 
 def rgb(value: str) -> RGBColor:
@@ -99,6 +130,65 @@ def add_arrow(slide, x: float, y: float, w: float, h: float, direction: str = "r
     shape.fill.solid()
     shape.fill.fore_color.rgb = rgb(fill)
     shape.line.color.rgb = rgb(fill)
+    return shape
+
+
+def build_math_catalog() -> dict[str, etree._Element]:
+    """LaTeX数式をPandocでOffice Mathへ変換する．"""
+    markdown = "## 数式\n\n" + "\n\n".join(
+        f"$${formula}$$" for formula in FORMULAS.values()
+    )
+    with tempfile.TemporaryDirectory() as tmp:
+        tmpdir = Path(tmp)
+        source = tmpdir / "equations.md"
+        output = tmpdir / "equations.pptx"
+        source.write_text(markdown, encoding="utf-8")
+        subprocess.run(
+            ["pandoc", str(source), "-o", str(output), "--slide-level=2"],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        with ZipFile(output) as archive:
+            xml = archive.read("ppt/slides/slide1.xml")
+    root = etree.fromstring(xml)
+    elements = root.xpath(".//a14:m", namespaces={"a14": A14_NS})
+    if len(elements) != len(FORMULAS):
+        raise RuntimeError(
+            f"Office Math変換数が一致しない: expected={len(FORMULAS)}, actual={len(elements)}"
+        )
+    return {
+        key: deepcopy(element)
+        for key, element in zip(FORMULAS, elements)
+    }
+
+
+def add_math(slide, key: str, x: float, y: float, w: float, h: float,
+             size: int = 20):
+    """編集可能なOffice Math数式をテキストボックスへ追加する．"""
+    shape = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
+    frame = shape.text_frame
+    frame.clear()
+    frame.margin_left = 0
+    frame.margin_right = 0
+    frame.margin_top = 0
+    frame.margin_bottom = 0
+    frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+    paragraph = frame.paragraphs[0]._p
+    for child in list(paragraph):
+        paragraph.remove(child)
+    p_pr = OxmlElement("a:pPr")
+    p_pr.set("algn", "ctr")
+    default_run = OxmlElement("a:defRPr")
+    default_run.set("sz", str(size * 100))
+    default_run.set("lang", "ja-JP")
+    p_pr.append(default_run)
+    paragraph.append(p_pr)
+    paragraph.append(deepcopy(MATH[key]))
+    end_run = OxmlElement("a:endParaRPr")
+    end_run.set("sz", str(size * 100))
+    end_run.set("lang", "ja-JP")
+    paragraph.append(end_run)
     return shape
 
 
@@ -173,20 +263,24 @@ def pde_stencil(prs: Presentation) -> None:
             shape.fill.solid()
             shape.fill.fore_color.rgb = rgb(WHITE)
             shape.line.color.rgb = rgb("A8B8C5")
-    points = {(2, 2): ("uᵢⱼ", "FFDB8A"), (1, 2): ("上", "DCEEFF"),
+    points = {(2, 2): ("中央", "FFDB8A"), (1, 2): ("上", "DCEEFF"),
               (3, 2): ("下", "DCEEFF"), (2, 1): ("左", "DCEEFF"),
               (2, 3): ("右", "DCEEFF")}
     for (row, col), (label, color) in points.items():
         add_circle(slide, label, x0 + col * cell + 0.12, y0 + row * cell + 0.12, 0.54, color, "3979AD", 13)
-    add_box(slide, "Δuᵢⱼ ≈\n(右 + 左 + 上 + 下 − 4×中央) / Δx²", 5.25, 1.55, 7.1, 1.4, BLUE, 21, True)
-    add_box(slide, "中央が周囲より高い\n→ Δu < 0 → 次に下がる", 5.25, 3.45, 3.35, 1.25, ORANGE, 17)
-    add_box(slide, "中央が周囲より低い\n→ Δu > 0 → 次に上がる", 9.0, 3.45, 3.35, 1.25, GREEN, 17)
+    add_box(slide, "", 5.25, 1.55, 7.1, 1.4, BLUE)
+    add_math(slide, "stencil", 5.45, 1.7, 6.7, 1.05, 18)
+    add_box(slide, "中央が周囲より高い\n\n次時刻に中央の値が下がる", 5.25, 3.45, 3.35, 1.45, ORANGE, 16)
+    add_math(slide, "delta_negative", 5.75, 3.95, 2.35, 0.38, 17)
+    add_box(slide, "中央が周囲より低い\n\n次時刻に中央の値が上がる", 9.0, 3.45, 3.35, 1.45, GREEN, 16)
+    add_math(slide, "delta_positive", 9.5, 3.95, 2.35, 0.38, 17)
     add_text(slide, "中央と上下左右の4点を参照する．斜め4点は含めない．", 5.25, 5.15, 7.1, 0.55, 17, False, MUTED)
 
 
 def reaction_diffusion(prs: Presentation) -> None:
     slide = base_slide(prs, "反応拡散 = 各点の反応 + 点どうしの拡散", "reaction_diffusion_parts.svg")
-    add_box(slide, "反応だけ\n各場所で2変数ODEが進む\nu ⇄ v", 0.6, 1.55, 3.35, 2.3, ORANGE, 19, True)
+    add_box(slide, "反応だけ\n各場所で2変数ODEが進む", 0.6, 1.55, 3.35, 2.3, ORANGE, 19, True)
+    add_math(slide, "reaction", 1.45, 3.05, 1.65, 0.42, 19)
     add_text(slide, "＋", 4.05, 2.2, 0.55, 0.6, 28, True, LINE)
     add_box(slide, "拡散だけ\n高い場所から低い場所へ広がる\n空間差をならす", 4.7, 1.55, 3.35, 2.3, BLUE, 19, True)
     add_arrow(slide, 8.25, 2.45, 0.6, 0.35)
@@ -210,39 +304,47 @@ def network_matrix(prs: Presentation) -> None:
     add_circle(slide, "2", 0.75, 3.8, 1.0, GREEN)
     add_circle(slide, "3", 3.15, 3.8, 1.0, ORANGE)
     add_box(slide, "2 → 1 : 0.8\n3 → 2 : 1.0\n1 → 3 : 0.5", 1.25, 2.5, 2.5, 1.0, WHITE, 16)
-    add_box(slide, "A = ⎛ 0    0.8   0  ⎞\n    ⎜ 0     0   1.0 ⎟\n    ⎝0.5    0    0  ⎠", 5.0, 1.45, 6.9, 2.25, BLUE, 22, True)
-    add_box(slide, "(A x)₁ = 0.8 x₂\n第1行は頂点1へ入る影響", 5.75, 4.2, 5.4, 1.15, GREEN, 18)
+    add_box(slide, "", 5.0, 1.45, 6.9, 2.25, BLUE)
+    add_math(slide, "adjacency", 5.65, 1.7, 5.6, 1.7, 21)
+    add_box(slide, "第1行は頂点1へ入る影響", 5.75, 4.2, 5.4, 1.35, GREEN, 17)
+    add_math(slide, "matrix_action", 7.05, 4.32, 2.8, 0.48, 18)
     add_text(slide, "Aᵢⱼ は頂点 j から頂点 i への影響．列が出発点，行が到着点．", 0.8, 6.0, 11.73, 0.55, 17, False, MUTED)
 
 
 def fin_balance(prs: Presentation) -> None:
     slide = base_slide(prs, "1次元フィンの熱収支", "fin_heat_balance.svg")
-    add_box(slide, "体部\nT = Tᵦ", 0.55, 2.0, 1.4, 2.1, "E85F49", 20, True)
-    add_box(slide, "フィン内部の熱伝導\n−kA dT/dx", 2.0, 2.3, 9.5, 1.45, "FFF0D0", 22, True, "A17839", False)
+    add_box(slide, "体部\n根元温度を固定", 0.55, 2.0, 1.4, 2.1, "E85F49", 17, True)
+    add_math(slide, "base_temperature", 0.68, 3.22, 1.15, 0.38, 16)
+    add_box(slide, "フィン内部の熱伝導", 2.0, 2.3, 9.5, 1.45, "FFF0D0", 22, True, "A17839", False)
+    add_math(slide, "fin_conduction", 5.25, 3.02, 3.0, 0.48, 19)
     add_arrow(slide, 1.55, 2.8, 1.0, 0.35, "right", "D65D47")
     for x in [3.1, 5.0, 6.9, 8.8, 10.7]:
         add_arrow(slide, x, 1.35, 0.35, 0.75, "up")
         add_arrow(slide, x, 3.95, 0.35, 0.75, "down")
-    add_text(slide, "表面から対流 hP(T − T∞)", 3.0, 0.95, 7.8, 0.45, 18, True, TEXT)
+    add_text(slide, "表面から周囲へ対流で放熱する", 3.0, 0.78, 7.8, 0.42, 18, True, TEXT)
+    add_math(slide, "fin_convection", 5.1, 1.16, 3.6, 0.42, 18)
     add_text(slide, "先へ進むほど熱が周囲へ失われ，温度差が小さくなる．", 1.5, 5.35, 10.4, 0.65, 18, False, MUTED)
 
 
 def plate_boundaries(prs: Presentation) -> None:
     slide = base_slide(prs, "薄板モデルの領域と境界条件", "plate_boundary_conditions.svg")
-    add_box(slide, "板の内部 Ω\n熱伝導 kΔT", 1.0, 1.2, 6.2, 3.8, "FFF4DD", 23, True, "B98A35", False)
-    add_box(slide, "根元: T = Tᵦ（固定温度）", 1.0, 4.45, 6.2, 0.65, "EE6453", 18, True, "EE6453", False)
+    add_box(slide, "板の内部領域\n熱伝導方程式を解く", 1.0, 1.2, 6.2, 3.8, "FFF4DD", 23, True, "B98A35", False)
+    add_math(slide, "plate_equation", 3.25, 3.15, 1.7, 0.5, 20)
+    add_box(slide, "根元は固定温度", 1.0, 4.45, 6.2, 0.65, "EE6453", 18, True, "EE6453", False)
+    add_math(slide, "plate_root", 5.3, 4.55, 1.35, 0.38, 17)
     for x in [1.35, 2.65, 3.95, 5.25, 6.55]:
         add_arrow(slide, x, 0.75, 0.32, 0.55, "up")
     add_arrow(slide, 0.45, 2.3, 0.55, 0.32, "left")
     add_arrow(slide, 7.2, 2.3, 0.55, 0.32, "right")
     add_box(slide, "計算で区別するもの\n\n内部セル\n根元セル\n対流境界\n形状の外部", 8.25, 1.2, 3.8, 3.8, BLUE, 18, True)
-    add_text(slide, "側面・先端: −k ∂T/∂n = h(T − T∞)", 1.0, 5.55, 6.8, 0.6, 17, False, MUTED)
+    add_text(slide, "側面・先端の対流境界条件", 1.0, 5.3, 6.8, 0.42, 17, False, MUTED)
+    add_math(slide, "plate_boundary", 1.65, 5.72, 5.5, 0.55, 17)
 
 
 def pattern_metrics(prs: Presentation) -> None:
     slide = base_slide(prs, "模様の見た目を複数の観察量へ分ける", "pattern_measurements.svg")
     items = [("入力する模様", "同じ画像を使う"), ("面積比", "明るい画素 ÷ 全画素"),
-             ("個数", "連結領域を数える"), ("特徴波長", "模様間隔 λ"),
+             ("個数", "連結領域を数える"), ("特徴波長", "模様の代表的な間隔"),
              ("方向", "縞の向き")]
     pipeline(slide, items, 2.0, "1つの特徴量だけでは区別できない模様がある．")
 
@@ -262,20 +364,26 @@ def boarding_rules(prs: Presentation) -> None:
 def repeated_simulation(prs: Presentation) -> None:
     slide = base_slide(prs, "確率的シミュレーションは分布で比較する", "repeated_simulation.svg")
     pipeline(slide, [("固定する条件", "人数・空間・規則・更新方式"),
-                     ("seedだけ変える", "seed 1 → T₁，…，seed n → Tₙ"),
+                     ("seedだけ変える", "複数のseedで独立に実行する"),
                      ("分布として比較", "平均・中央値・ばらつき・未完了率")],
              2.05, "基準条件と代替条件には同じseed集合を使い，偶然差をそろえる．")
+    add_math(slide, "seed_runs", 4.45, 4.45, 4.5, 0.5, 17)
 
 
 def two_person(prs: Presentation) -> None:
     slide = base_slide(prs, "2人の線形ODEと係数行列", "two_person_coupling.svg")
-    add_circle(slide, "R(t)", 1.25, 2.05, 1.5, BLUE, "397BB2", 21)
-    add_circle(slide, "J(t)", 4.25, 2.05, 1.5, ORANGE, "C86B42", 21)
+    add_circle(slide, "", 1.25, 2.05, 1.5, BLUE, "397BB2", 21)
+    add_math(slide, "state_r", 1.55, 2.5, 0.9, 0.5, 19)
+    add_circle(slide, "", 4.25, 2.05, 1.5, ORANGE, "C86B42", 21)
+    add_math(slide, "state_j", 4.55, 2.5, 0.9, 0.5, 19)
     add_arrow(slide, 2.8, 1.75, 1.4, 0.35, "right")
-    add_text(slide, "c", 3.25, 1.3, 0.5, 0.4, 20, True)
+    add_math(slide, "coefficient_c", 3.25, 1.28, 0.5, 0.42, 19)
     add_arrow(slide, 2.8, 3.6, 1.4, 0.35, "left")
-    add_text(slide, "b", 3.25, 4.0, 0.5, 0.4, 20, True)
-    add_box(slide, "d/dt (R, J)ᵀ = M(R, J)ᵀ\n\nM = ⎛ a  b ⎞\n    ⎝ c  d ⎠\n\n第1行 → dR/dt\n第2行 → dJ/dt", 7.0, 1.2, 5.1, 4.2, PURPLE, 21, True)
+    add_math(slide, "coefficient_b", 3.25, 4.0, 0.5, 0.42, 19)
+    add_box(slide, "", 7.0, 1.2, 5.1, 4.2, PURPLE)
+    add_math(slide, "two_person_ode", 7.35, 1.6, 4.4, 1.0, 18)
+    add_math(slide, "two_person_matrix", 8.1, 2.85, 2.9, 1.05, 20)
+    add_text(slide, "第1行はRの変化率\n第2行はJの変化率", 7.55, 4.15, 4.0, 0.75, 16, False, MUTED)
     add_text(slide, "符号を1個ずつ見るだけでなく，行列全体の固有値で挙動を判断する．", 1.0, 5.75, 11.33, 0.6, 17, False, MUTED)
 
 
@@ -317,6 +425,8 @@ def cross_theme(prs: Presentation) -> None:
 
 
 def main() -> None:
+    global MATH
+    MATH = build_math_catalog()
     prs = Presentation()
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)

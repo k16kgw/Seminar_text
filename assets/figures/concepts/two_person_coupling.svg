@@ -3,7 +3,7 @@
   <desc id="desc">RとJの自己作用と相互作用を矢印で示し，係数行列の各要素に対応させる．</desc>
   <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#415d73"/></marker><style>.t{font:21px sans-serif;fill:#20364a}.s{font:16px sans-serif;fill:#52677a}.a{stroke:#415d73;stroke-width:4;fill:none;marker-end:url(#a)}</style></defs>
   <rect width="1000" height="400" fill="#fbfdff"/>
-  <text x="500" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">行列の行は「どの変化率へ入るか」を表す</text>
+  <text x="500" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">行列の各行は対応する状態変数の変化率を表す</text>
   <g transform="translate(55 75)">
     <circle cx="120" cy="140" r="58" fill="#e8f3ff" stroke="#397bb2" stroke-width="3"/><text x="120" y="148" text-anchor="middle" class="t">R(t)</text>
     <circle cx="380" cy="140" r="58" fill="#fff0e8" stroke="#c86b42" stroke-width="3"/><text x="380" y="148" text-anchor="middle" class="t">J(t)</text>

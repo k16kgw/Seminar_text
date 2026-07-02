@@ -20,7 +20,7 @@ title: はじめに
 研究者自身がモデルを拡張し，比較・検証・考察する
 ```
 
-![教材から学生自身の卒業研究へ進む学習経路．](../assets/figures/concepts/learning_path.svg)
+![教材から学生自身の卒業研究へ進む学習経路．](../assets/figures/concepts/learning_path.png)
 
 矢印は一方通行ではない．ロードマップ以降で問題が見つかったら，基礎モデルや研究技能へ戻って条件を確認する．
 

@@ -3,7 +3,7 @@
   <desc id="desc">同じ模様から面積比，連結成分数，特徴波長，方向を測る様子．</desc>
   <style>.t{font:19px sans-serif;fill:#21364a}.s{font:15px sans-serif;fill:#52677a}.b{stroke:#6e8294;stroke-width:2;rx:12}</style>
   <rect width="1050" height="430" fill="#fbfdff"/>
-  <text x="525" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">「似ている」を，異なる問いに答える複数の量へ分ける</text>
+  <text x="525" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">模様の類似性を複数の数値特徴量へ分解する</text>
   <g transform="translate(35 85)">
     <rect class="b" width="220" height="255" fill="#18334b"/>
     <circle cx="45" cy="55" r="22" fill="#ffc960"/><circle cx="110" cy="42" r="14" fill="#ffc960"/><circle cx="170" cy="70" r="28" fill="#ffc960"/><circle cx="70" cy="135" r="30" fill="#ffc960"/><circle cx="155" cy="145" r="20" fill="#ffc960"/><circle cx="115" cy="210" r="25" fill="#ffc960"/>

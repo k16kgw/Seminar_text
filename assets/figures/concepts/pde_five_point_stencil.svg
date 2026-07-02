@@ -3,7 +3,7 @@
   <desc id="desc">中央格子点と上下左右の4点を色分けし，5点差分式との対応を示す．</desc>
   <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0v6l8-3z" fill="#42637d"/></marker><style>.g{stroke:#b5c4d3;stroke-width:2}.n{fill:#dceeff;stroke:#3274a8;stroke-width:3}.c{fill:#ffdb8a;stroke:#b87500;stroke-width:4}.t{font:20px sans-serif;fill:#20364b}.s{font:17px sans-serif;fill:#4f6477}</style></defs>
   <rect width="1000" height="470" fill="#fbfdff"/>
-  <text x="500" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">5点差分は「中央」と「上下左右」を参照する</text>
+  <text x="500" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">5点差分は中央点と上下左右の4点を参照する</text>
   <g transform="translate(60 70)">
     <g class="g"><path d="M0 0H360M0 90H360M0 180H360M0 270H360M0 360H360"/><path d="M0 0V360M90 0V360M180 0V360M270 0V360M360 0V360"/></g>
     <circle cx="180" cy="180" r="28" class="c"/><text x="180" y="187" text-anchor="middle" class="t">uᵢⱼ</text>
