@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
   <title id="title">数理モデリングの循環</title>
-  <desc id="desc">現象から問い、状態変数、最小モデル、数値実験、評価指標、検証と限界へ進み、問いへ戻る循環。</desc>
+  <desc id="desc">現象から問い，状態変数，最小モデル，数値実験，評価指標，検証と限界へ進み，問いへ戻る循環．</desc>
   <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0v6l8-3z" fill="#40566e"/></marker><style>.t{font:18px sans-serif;fill:#21364b}.s{font:15px sans-serif;fill:#53677c}.b{stroke:#3d6f9f;stroke-width:2;rx:14}.p{stroke:#40566e;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
   <rect width="1000" height="430" fill="#fafcff"/>
-  <text x="500" y="40" text-anchor="middle" style="font:700 25px sans-serif;fill:#173451">研究計画は一方向ではなく、検証しながら戻る</text>
+  <text x="500" y="40" text-anchor="middle" style="font:700 25px sans-serif;fill:#173451">研究計画は一方向ではなく，検証しながら戻る</text>
   <g transform="translate(60 90)"><rect class="b" width="170" height="82" fill="#e9f3ff"/><text x="85" y="34" text-anchor="middle" class="t">現象と問い</text><text x="85" y="60" text-anchor="middle" class="s">何を比較するか</text></g>
   <path class="p" d="M235 131H295"/>
   <g transform="translate(300 90)"><rect class="b" width="170" height="82" fill="#eaf9ef"/><text x="85" y="34" text-anchor="middle" class="t">状態と仮定</text><text x="85" y="60" text-anchor="middle" class="s">何を残すか</text></g>
@@ -18,5 +18,5 @@
   <path class="p" d="M535 291H475"/>
   <g transform="translate(300 250)"><rect class="b" width="170" height="82" fill="#fff7e8"/><text x="85" y="34" text-anchor="middle" class="t">妥当性と限界</text><text x="85" y="60" text-anchor="middle" class="s">どこまで言えるか</text></g>
   <path class="p" d="M300 291C155 291 145 220 145 180"/>
-  <text x="500" y="395" text-anchor="middle" class="t">計算結果が問いに答えなければ、状態変数・仮定・比較条件を見直す</text>
+  <text x="500" y="395" text-anchor="middle" class="t">計算結果が問いに答えなければ，状態変数・仮定・比較条件を見直す</text>
 </svg>

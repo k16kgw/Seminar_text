@@ -1,14 +1,14 @@
 """notebook の存在と妥当性を確認する簡単なテスト.
 
-`pytest` で実行する。各 notebook が
+`pytest` で実行する．各 notebook が
 
-1. 存在し、
-2. nbformat として読み込め、
-3. 対応章へのリンクを冒頭 Markdown セルに含み、
+1. 存在し，
+2. nbformat として読み込め，
+3. 対応章へのリンクを冒頭 Markdown セルに含み，
 4. 末尾に「課題」セルを持つ
 
-ことを確認する。実行（セルを走らせる）確認は時間がかかるため、
-`scripts/check_notebooks.py --execute` に委ねる。
+ことを確認する．実行（セルを走らせる）確認は時間がかかるため，
+`scripts/check_notebooks.py --execute` に委ねる．
 """
 
 from __future__ import annotations
@@ -21,67 +21,67 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 
 NOTEBOOKS = [
-    "00_pde_diffusion_basics.ipynb",
-    "01_stegosaurus_heat_1d_fin.ipynb",
-    "02_stegosaurus_single_plate_2d.ipynb",
-    "03_reaction_diffusion_gray_scott.ipynb",
-    "04_snake_pattern_features.ipynb",
-    "05_train_boarding_ca.ipynb",
-    "06_stochastic_simulation_repeats.ipynb",
-    "07_love_dynamics_two_person.ipynb",
-    "08_love_dynamics_network.ipynb",
+    "10_pde_diffusion_basics.ipynb",
+    "11_stegosaurus_heat_1d_fin.ipynb",
+    "12_stegosaurus_single_plate_2d.ipynb",
+    "21_reaction_diffusion_gray_scott.ipynb",
+    "22_snake_pattern_features.ipynb",
+    "31_train_boarding_ca.ipynb",
+    "32_stochastic_simulation_repeats.ipynb",
+    "41_love_dynamics_two_person.ipynb",
+    "42_love_dynamics_network.ipynb",
 ]
 
 CHAPTERS = [
     "00_research_design.md",
-    "00_pde_foundations.md",
-    "00_pattern_foundations.md",
-    "00_agent_foundations.md",
-    "00_network_foundations.md",
-    "01_stegosaurus_heat_basic.md",
-    "02_stegosaurus_heat_shape.md",
-    "02_stegosaurus_research_roadmap.md",
-    "03_reaction_diffusion_basic.md",
-    "04_reaction_diffusion_snake.md",
-    "04_snake_research_roadmap.md",
-    "05_agent_boarding_basic.md",
-    "06_agent_boarding_behavior.md",
-    "06_boarding_research_roadmap.md",
-    "07_love_dynamics_basic.md",
-    "08_love_dynamics_network.md",
-    "08_love_research_roadmap.md",
-    "09_synthesis.md",
+    "10_pde_foundations.md",
+    "20_pattern_foundations.md",
+    "30_agent_foundations.md",
+    "40_network_foundations.md",
+    "11_stegosaurus_heat_basic.md",
+    "12_stegosaurus_heat_shape.md",
+    "13_stegosaurus_research_roadmap.md",
+    "21_reaction_diffusion_basic.md",
+    "22_reaction_diffusion_snake.md",
+    "23_snake_research_roadmap.md",
+    "31_agent_boarding_basic.md",
+    "32_agent_boarding_behavior.md",
+    "33_boarding_research_roadmap.md",
+    "41_love_dynamics_basic.md",
+    "42_love_dynamics_network.md",
+    "43_love_research_roadmap.md",
+    "50_synthesis.md",
     "index.md",
 ]
 
 INSTRUCTOR_NOTES = [
     "README.md",
-    "01_stegosaurus_goal.md",
-    "02_snake_goal.md",
-    "03_boarding_goal.md",
-    "04_love_network_goal.md",
+    "13_stegosaurus_goal.md",
+    "23_snake_goal.md",
+    "33_boarding_goal.md",
+    "43_love_network_goal.md",
 ]
 
 NOTEBOOK_FIGURES = [
-    "00_pde_stable_diffusion.png",
-    "00_pde_stability_comparison.png",
-    "01_fin_temperature.png",
-    "01_fin_performance.png",
-    "02_single_plate_temperature.png",
-    "02_plate_h_sensitivity.png",
-    "03_gray_scott_pattern.png",
-    "03_gray_scott_parameter_comparison.png",
-    "04_synthetic_patterns.png",
-    "04_pattern_spectra.png",
-    "05_boarding_states.png",
-    "05_boarding_count_sweep.png",
-    "06_bottleneck_trace.png",
-    "06_repeat_distribution.png",
-    "07_two_person_timeseries.png",
-    "07_two_person_phase_portrait.png",
-    "08_network_graph.png",
-    "08_network_timeseries.png",
-    "08_network_stability.png",
+    "10_pde_stable_diffusion.png",
+    "10_pde_stability_comparison.png",
+    "11_fin_temperature.png",
+    "11_fin_performance.png",
+    "12_single_plate_temperature.png",
+    "12_plate_h_sensitivity.png",
+    "21_gray_scott_pattern.png",
+    "21_gray_scott_parameter_comparison.png",
+    "22_synthetic_patterns.png",
+    "22_pattern_spectra.png",
+    "31_boarding_states.png",
+    "31_boarding_count_sweep.png",
+    "32_bottleneck_trace.png",
+    "32_repeat_distribution.png",
+    "41_two_person_timeseries.png",
+    "41_two_person_phase_portrait.png",
+    "42_network_graph.png",
+    "42_network_timeseries.png",
+    "42_network_stability.png",
 ]
 
 
@@ -120,14 +120,14 @@ def test_chapter_links_to_notebook(name: str) -> None:
     if name in {
         "index.md",
         "00_research_design.md",
-        "00_pattern_foundations.md",
-        "00_agent_foundations.md",
-        "00_network_foundations.md",
-        "02_stegosaurus_research_roadmap.md",
-        "04_snake_research_roadmap.md",
-        "06_boarding_research_roadmap.md",
-        "08_love_research_roadmap.md",
-        "09_synthesis.md",
+        "20_pattern_foundations.md",
+        "30_agent_foundations.md",
+        "40_network_foundations.md",
+        "13_stegosaurus_research_roadmap.md",
+        "23_snake_research_roadmap.md",
+        "33_boarding_research_roadmap.md",
+        "43_love_research_roadmap.md",
+        "50_synthesis.md",
     }:
         pytest.skip("index・準備資料・卒研ロードマップ・振り返りは notebook を持たない")
     path = ROOT / "chapters" / name

@@ -3,7 +3,7 @@ version: 1
 project:
   id: e902ddd0-000a-40d8-8d45-cd1afda84ff6
   title: 卒業研究準備セミナー：数理モデリングとシミュレーション
-  description: 既習の力学系から偏微分方程式の基礎を学び、熱伝導、反応拡散、マルチエージェント、ネットワークモデルへ接続する学部4年生向け教材
+  description: 既習の力学系から偏微分方程式の基礎を学び，熱伝導，反応拡散，マルチエージェント，ネットワークモデルへ接続する学部4年生向け教材
   keywords:
     - 数理モデル
     - 力学系
@@ -27,40 +27,40 @@ project:
     - title: 卒研の準備
       children:
         - file: chapters/00_research_design.md
-        - file: chapters/00_pde_foundations.md
-        - file: chapters/00_pattern_foundations.md
-        - file: chapters/00_agent_foundations.md
-        - file: chapters/00_network_foundations.md
+        - file: chapters/10_pde_foundations.md
+        - file: chapters/20_pattern_foundations.md
+        - file: chapters/30_agent_foundations.md
+        - file: chapters/40_network_foundations.md
     - title: ステゴサウルス背板と放熱
       children:
-        - file: chapters/01_stegosaurus_heat_basic.md
-        - file: chapters/02_stegosaurus_heat_shape.md
-        - file: chapters/02_stegosaurus_research_roadmap.md
+        - file: chapters/11_stegosaurus_heat_basic.md
+        - file: chapters/12_stegosaurus_heat_shape.md
+        - file: chapters/13_stegosaurus_research_roadmap.md
     - title: ヘビ模様と反応拡散
       children:
-        - file: chapters/03_reaction_diffusion_basic.md
-        - file: chapters/04_reaction_diffusion_snake.md
-        - file: chapters/04_snake_research_roadmap.md
+        - file: chapters/21_reaction_diffusion_basic.md
+        - file: chapters/22_reaction_diffusion_snake.md
+        - file: chapters/23_snake_research_roadmap.md
     - title: 電車乗降とマルチエージェント
       children:
-        - file: chapters/05_agent_boarding_basic.md
-        - file: chapters/06_agent_boarding_behavior.md
-        - file: chapters/06_boarding_research_roadmap.md
+        - file: chapters/31_agent_boarding_basic.md
+        - file: chapters/32_agent_boarding_behavior.md
+        - file: chapters/33_boarding_research_roadmap.md
     - title: 恋愛モデルとネットワーク
       children:
-        - file: chapters/07_love_dynamics_basic.md
-        - file: chapters/08_love_dynamics_network.md
-        - file: chapters/08_love_research_roadmap.md
-    - file: chapters/09_synthesis.md
-    # 教員用ノートは通常サイトでは非表示にする。
-    # 必要なときだけ、以下のコメントを外して教員限定ビルドで使用する。
+        - file: chapters/41_love_dynamics_basic.md
+        - file: chapters/42_love_dynamics_network.md
+        - file: chapters/43_love_research_roadmap.md
+    - file: chapters/50_synthesis.md
+    # 教員用ノートは通常サイトでは非表示にする．
+    # 必要なときだけ，以下のコメントを外して教員限定ビルドで使用する．
     # - title: 教員用：卒研ゴールの目安
     #   children:
     #     - file: instructor_notes/README.md
-    #     - file: instructor_notes/01_stegosaurus_goal.md
-    #     - file: instructor_notes/02_snake_goal.md
-    #     - file: instructor_notes/03_boarding_goal.md
-    #     - file: instructor_notes/04_love_network_goal.md
+    #     - file: instructor_notes/13_stegosaurus_goal.md
+    #     - file: instructor_notes/23_snake_goal.md
+    #     - file: instructor_notes/33_boarding_goal.md
+    #     - file: instructor_notes/43_love_network_goal.md
   settings:
     output_matplotlib_strings: remove
     output_stderr: remove-warn

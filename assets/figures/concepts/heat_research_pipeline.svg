@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="330" viewBox="0 0 1100 330" role="img" aria-labelledby="title desc">
-  <title id="title">背板形状比較の研究工程</title><desc id="desc">基準計算、形状一つの追加、公平な正規化、二形状比較、検証、感度分析の順。</desc>
+  <title id="title">背板形状比較の研究工程</title><desc id="desc">基準計算，形状一つの追加，公平な正規化，二形状比較，検証，感度分析の順．</desc>
   <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0v6l8-3z" fill="#496177"/></marker><style>.t{font:18px sans-serif;fill:#21364a}.s{font:14px sans-serif;fill:#53677a}.b{stroke:#6c8295;stroke-width:2;rx:12}.p{stroke:#496177;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
-  <rect width="1100" height="330" fill="#fbfdff"/><text x="550" y="36" text-anchor="middle" style="font:700 25px sans-serif;fill:#173451">形状を増やす前に、比較と検証を1組ずつ完成させる</text>
+  <rect width="1100" height="330" fill="#fbfdff"/><text x="550" y="36" text-anchor="middle" style="font:700 25px sans-serif;fill:#173451">形状を増やす前に，比較と検証を1組ずつ完成させる</text>
   <g transform="translate(25 85)"><rect class="b" width="150" height="120" fill="#eaf4ff"/><text x="75" y="38" text-anchor="middle" class="t">基準計算</text><text x="75" y="70" text-anchor="middle" class="s">長方形</text><text x="75" y="94" text-anchor="middle" class="s">収支・格子確認</text></g><path class="p" d="M180 145H205"/>
   <g transform="translate(210 85)"><rect class="b" width="150" height="120" fill="#fff3e1"/><text x="75" y="38" text-anchor="middle" class="t">形状を1つ追加</text><text x="75" y="70" text-anchor="middle" class="s">輪郭・面積</text><text x="75" y="94" text-anchor="middle" class="s">孤立セル確認</text></g><path class="p" d="M365 145H390"/>
   <g transform="translate(395 85)"><rect class="b" width="150" height="120" fill="#eef9ef"/><text x="75" y="38" text-anchor="middle" class="t">公平に正規化</text><text x="75" y="70" text-anchor="middle" class="s">同体積など</text><text x="75" y="94" text-anchor="middle" class="s">固定量を記録</text></g><path class="p" d="M550 145H575"/>

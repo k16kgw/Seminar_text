@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470" role="img" aria-labelledby="title desc">
   <title id="title">2次元ラプラシアンの5点差分</title>
-  <desc id="desc">中央格子点と上下左右の4点を色分けし、5点差分式との対応を示す。</desc>
+  <desc id="desc">中央格子点と上下左右の4点を色分けし，5点差分式との対応を示す．</desc>
   <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0v6l8-3z" fill="#42637d"/></marker><style>.g{stroke:#b5c4d3;stroke-width:2}.n{fill:#dceeff;stroke:#3274a8;stroke-width:3}.c{fill:#ffdb8a;stroke:#b87500;stroke-width:4}.t{font:20px sans-serif;fill:#20364b}.s{font:17px sans-serif;fill:#4f6477}</style></defs>
   <rect width="1000" height="470" fill="#fbfdff"/>
   <text x="500" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">5点差分は「中央」と「上下左右」を参照する</text>

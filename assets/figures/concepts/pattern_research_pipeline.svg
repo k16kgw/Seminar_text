@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="350" viewBox="0 0 1100 350" role="img" aria-labelledby="title desc">
-  <title id="title">実画像と生成模様を比較する研究工程</title><desc id="desc">実画像とシミュレーションを別々に準備し、同じ特徴量へ変換して距離を比較し、未使用画像で検証する。</desc>
+  <title id="title">実画像と生成模様を比較する研究工程</title><desc id="desc">実画像とシミュレーションを別々に準備し，同じ特徴量へ変換して距離を比較し，未使用画像で検証する．</desc>
   <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0v6l8-3z" fill="#496177"/></marker><style>.t{font:18px sans-serif;fill:#21364a}.s{font:14px sans-serif;fill:#53677a}.b{stroke:#6c8295;stroke-width:2;rx:12}.p{stroke:#496177;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
-  <rect width="1100" height="350" fill="#fbfdff"/><text x="550" y="36" text-anchor="middle" style="font:700 25px sans-serif;fill:#173451">画像側と計算側へ、同じ測定を適用する</text>
+  <rect width="1100" height="350" fill="#fbfdff"/><text x="550" y="36" text-anchor="middle" style="font:700 25px sans-serif;fill:#173451">画像側と計算側へ，同じ測定を適用する</text>
   <g transform="translate(35 75)"><rect class="b" width="190" height="95" fill="#eaf4ff"/><text x="95" y="35" text-anchor="middle" class="t">実画像</text><text x="95" y="66" text-anchor="middle" class="s">切出し・向き・前処理</text></g>
   <g transform="translate(35 210)"><rect class="b" width="190" height="95" fill="#fff3e1"/><text x="95" y="35" text-anchor="middle" class="t">生成模様</text><text x="95" y="66" text-anchor="middle" class="s">条件・seed・保存時刻</text></g>
   <path class="p" d="M230 123H305"/><path class="p" d="M230 258H305"/>

@@ -1,8 +1,8 @@
-"""Executed notebook outputsから学生用章へ掲載する代表図を書き出す。
+"""Executed notebook outputsから学生用章へ掲載する代表図を書き出す．
 
-Notebookを先に実行し、各セルの ``image/png`` 出力を
-``assets/figures/notebook/`` へ保存する。図の選定はセルIDで固定し、
-Notebookの再実行後も同じファイル名で章から参照できるようにする。
+Notebookを先に実行し，各セルの ``image/png`` 出力を
+``assets/figures/notebook/`` へ保存する．図の選定はセルIDで固定し，
+Notebookの再実行後も同じファイル名で章から参照できるようにする．
 """
 
 from __future__ import annotations
@@ -15,48 +15,48 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_DIR = ROOT / "assets" / "figures" / "notebook"
 
 EXPORTS: dict[str, list[tuple[str, str]]] = {
-    "00_pde_diffusion_basics.ipynb": [
-        ("stable-code", "00_pde_stable_diffusion.png"),
-        ("unstable-code", "00_pde_stability_comparison.png"),
+    "10_pde_diffusion_basics.ipynb": [
+        ("stable-code", "10_pde_stable_diffusion.png"),
+        ("unstable-code", "10_pde_stability_comparison.png"),
     ],
-    "01_stegosaurus_heat_1d_fin.ipynb": [
-        ("cell-0008", "01_fin_temperature.png"),
-        ("cell-0010", "01_fin_performance.png"),
+    "11_stegosaurus_heat_1d_fin.ipynb": [
+        ("cell-0008", "11_fin_temperature.png"),
+        ("cell-0010", "11_fin_performance.png"),
     ],
-    "02_stegosaurus_single_plate_2d.ipynb": [
-        ("visualization", "02_single_plate_temperature.png"),
-        ("parameter", "02_plate_h_sensitivity.png"),
+    "12_stegosaurus_single_plate_2d.ipynb": [
+        ("visualization", "12_single_plate_temperature.png"),
+        ("parameter", "12_plate_h_sensitivity.png"),
     ],
-    "03_reaction_diffusion_gray_scott.ipynb": [
-        ("cell-0039", "03_gray_scott_pattern.png"),
-        ("cell-0041", "03_gray_scott_parameter_comparison.png"),
+    "21_reaction_diffusion_gray_scott.ipynb": [
+        ("cell-0039", "21_gray_scott_pattern.png"),
+        ("cell-0041", "21_gray_scott_parameter_comparison.png"),
     ],
-    "04_snake_pattern_features.ipynb": [
-        ("patterns", "04_synthetic_patterns.png"),
-        ("spectrum", "04_pattern_spectra.png"),
+    "22_snake_pattern_features.ipynb": [
+        ("patterns", "22_synthetic_patterns.png"),
+        ("spectrum", "22_pattern_spectra.png"),
     ],
-    "05_train_boarding_ca.ipynb": [
-        ("cell-0067", "05_boarding_states.png"),
-        ("cell-0069", "05_boarding_count_sweep.png"),
+    "31_train_boarding_ca.ipynb": [
+        ("cell-0067", "31_boarding_states.png"),
+        ("cell-0069", "31_boarding_count_sweep.png"),
     ],
-    "06_stochastic_simulation_repeats.ipynb": [
-        ("trace", "06_bottleneck_trace.png"),
-        ("distribution", "06_repeat_distribution.png"),
+    "32_stochastic_simulation_repeats.ipynb": [
+        ("trace", "32_bottleneck_trace.png"),
+        ("distribution", "32_repeat_distribution.png"),
     ],
-    "07_love_dynamics_two_person.ipynb": [
-        ("solve", "07_two_person_timeseries.png"),
-        ("phase", "07_two_person_phase_portrait.png"),
+    "41_love_dynamics_two_person.ipynb": [
+        ("solve", "41_two_person_timeseries.png"),
+        ("phase", "41_two_person_phase_portrait.png"),
     ],
-    "08_love_dynamics_network.ipynb": [
-        ("graph", "08_network_graph.png"),
-        ("simulation", "08_network_timeseries.png"),
-        ("coupling", "08_network_stability.png"),
+    "42_love_dynamics_network.ipynb": [
+        ("graph", "42_network_graph.png"),
+        ("simulation", "42_network_timeseries.png"),
+        ("coupling", "42_network_stability.png"),
     ],
 }
 
 
 def first_png_output(cell: dict) -> str:
-    """セルの最初のPNG出力をbase64文字列として返す。"""
+    """セルの最初のPNG出力をbase64文字列として返す．"""
     for output in cell.get("outputs", []):
         png = output.get("data", {}).get("image/png")
         if png:

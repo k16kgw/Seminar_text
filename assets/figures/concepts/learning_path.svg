@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" role="img" aria-labelledby="title desc">
   <title id="title">教材から卒業研究へ進む学習経路</title>
-  <desc id="desc">卒研の準備、基礎モデル、研究技能、卒研ロードマップ、学生自身の研究を順に示す。</desc>
+  <desc id="desc">卒研の準備，基礎モデル，研究技能，卒研ロードマップ，学生自身の研究を順に示す．</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#425466"/></marker>
     <style>.h{font:700 24px sans-serif;fill:#183153}.t{font:18px sans-serif;fill:#25364a}.s{font:15px sans-serif;fill:#52657a}.box{stroke-width:2;rx:14}.a{stroke:#425466;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>

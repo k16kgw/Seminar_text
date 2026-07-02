@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1050" height="450" viewBox="0 0 1050 450" role="img" aria-labelledby="title desc">
   <title id="title">乗降セルオートマトンの空間と規則</title>
-  <desc id="desc">車内、ドア、ホームを格子で示し、降車客と乗車客の進行方向、1セル1人の排他則を示す。</desc>
+  <desc id="desc">車内，ドア，ホームを格子で示し，降車客と乗車客の進行方向，1セル1人の排他則を示す．</desc>
   <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#405d73"/></marker><style>.t{font:20px sans-serif;fill:#20364a}.s{font:16px sans-serif;fill:#52677a}.g{stroke:#a6b6c4;stroke-width:1.5}.a{stroke:#405d73;stroke-width:4;fill:none;marker-end:url(#a)}</style></defs>
   <rect width="1050" height="450" fill="#fbfdff"/>
   <text x="525" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">空間・エージェント・更新規則を別々に定義する</text>
@@ -22,5 +22,5 @@
     <rect x="30" y="195" width="200" height="42" rx="8" fill="#ffe9e8" stroke="#c35f59"/>
     <text x="130" y="222" text-anchor="middle" class="t">1セルに1人</text>
   </g>
-  <text x="525" y="420" text-anchor="middle" class="t">見た目のアニメーションより先に、領域と規則を文章化する</text>
+  <text x="525" y="420" text-anchor="middle" class="t">見た目のアニメーションより先に，領域と規則を文章化する</text>
 </svg>

@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="350" viewBox="0 0 1100 350" role="img" aria-labelledby="title desc">
-  <title id="title">物語の観測から関係モデルを検証する研究工程</title><desc id="desc">作品範囲、状態変数、少量アノテーション、二人基準モデル、必要な一項の追加、未使用データでの検証。</desc>
+  <title id="title">物語の観測から関係モデルを検証する研究工程</title><desc id="desc">作品範囲，状態変数，少量アノテーション，二人基準モデル，必要な一項の追加，未使用データでの検証．</desc>
   <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0v6l8-3z" fill="#496177"/></marker><style>.t{font:18px sans-serif;fill:#21364a}.s{font:14px sans-serif;fill:#53677a}.b{stroke:#6c8295;stroke-width:2;rx:12}.p{stroke:#496177;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
-  <rect width="1100" height="350" fill="#fbfdff"/><text x="550" y="36" text-anchor="middle" style="font:700 25px sans-serif;fill:#173451">観測できる量を決めてから、必要な複雑さだけを足す</text>
+  <rect width="1100" height="350" fill="#fbfdff"/><text x="550" y="36" text-anchor="middle" style="font:700 25px sans-serif;fill:#173451">観測できる量を決めてから，必要な複雑さだけを足す</text>
   <g transform="translate(20 90)"><rect class="b" width="150" height="125" fill="#eaf4ff"/><text x="75" y="36" text-anchor="middle" class="t">対象範囲</text><text x="75" y="70" text-anchor="middle" class="s">人物・場面</text><text x="75" y="94" text-anchor="middle" class="s">時間単位</text></g><path class="p" d="M175 152H200"/>
   <g transform="translate(205 90)"><rect class="b" width="150" height="125" fill="#fff3e1"/><text x="75" y="36" text-anchor="middle" class="t">状態を定義</text><text x="75" y="70" text-anchor="middle" class="s">尺度・不明値</text><text x="75" y="94" text-anchor="middle" class="s">判断根拠</text></g><path class="p" d="M360 152H385"/>
   <g transform="translate(390 90)"><rect class="b" width="150" height="125" fill="#eef9ef"/><text x="75" y="36" text-anchor="middle" class="t">少量で試す</text><text x="75" y="70" text-anchor="middle" class="s">評価の不一致から</text><text x="75" y="94" text-anchor="middle" class="s">基準を修正</text></g><path class="p" d="M545 152H570"/>
   <g transform="translate(575 90)"><rect class="b" width="150" height="125" fill="#f3edff"/><text x="75" y="36" text-anchor="middle" class="t">2人基準</text><text x="75" y="70" text-anchor="middle" class="s">予測と残差</text><text x="75" y="94" text-anchor="middle" class="s">を記録</text></g><path class="p" d="M730 152H755"/>
   <g transform="translate(760 90)"><rect class="b" width="150" height="125" fill="#ffecef"/><text x="75" y="36" text-anchor="middle" class="t">1項だけ追加</text><text x="75" y="70" text-anchor="middle" class="s">残差に対応する</text><text x="75" y="94" text-anchor="middle" class="s">根拠を示す</text></g><path class="p" d="M915 152H940"/>
   <g transform="translate(945 90)"><rect class="b" width="135" height="125" fill="#eaf8f7"/><text x="67" y="36" text-anchor="middle" class="t">検証</text><text x="67" y="70" text-anchor="middle" class="s">未使用場面</text><text x="67" y="94" text-anchor="middle" class="s">単純系と比較</text></g>
-  <text x="550" y="290" text-anchor="middle" class="t">推定誤差が下がっても、係数の意味と識別可能性を別に確認する</text>
+  <text x="550" y="290" text-anchor="middle" class="t">推定誤差が下がっても，係数の意味と識別可能性を別に確認する</text>
 </svg>

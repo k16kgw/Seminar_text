@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="340" viewBox="0 0 1100 340" role="img" aria-labelledby="title desc">
-  <title id="title">乗降行動をモデル化して比較する研究工程</title><desc id="desc">観察、操作的定義、擬似コード、小配置テスト、同じseedでの比較、感度分析の順。</desc>
+  <title id="title">乗降行動をモデル化して比較する研究工程</title><desc id="desc">観察，操作的定義，擬似コード，小配置テスト，同じseedでの比較，感度分析の順．</desc>
   <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0v6l8-3z" fill="#496177"/></marker><style>.t{font:18px sans-serif;fill:#21364a}.s{font:14px sans-serif;fill:#53677a}.b{stroke:#6c8295;stroke-width:2;rx:12}.p{stroke:#496177;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
-  <rect width="1100" height="340" fill="#fbfdff"/><text x="550" y="36" text-anchor="middle" style="font:700 25px sans-serif;fill:#173451">行動の言葉を、第三者が実装できる規則へ変える</text>
+  <rect width="1100" height="340" fill="#fbfdff"/><text x="550" y="36" text-anchor="middle" style="font:700 25px sans-serif;fill:#173451">行動の言葉を，第三者が実装できる規則へ変える</text>
   <g transform="translate(20 90)"><rect class="b" width="150" height="120" fill="#eaf4ff"/><text x="75" y="38" text-anchor="middle" class="t">観察</text><text x="75" y="72" text-anchor="middle" class="s">位置変化を記録</text></g><path class="p" d="M175 150H200"/>
   <g transform="translate(205 90)"><rect class="b" width="150" height="120" fill="#fff3e1"/><text x="75" y="38" text-anchor="middle" class="t">操作的定義</text><text x="75" y="72" text-anchor="middle" class="s">いつ・どこへ</text></g><path class="p" d="M360 150H385"/>
   <g transform="translate(390 90)"><rect class="b" width="150" height="120" fill="#eef9ef"/><text x="75" y="38" text-anchor="middle" class="t">擬似コード</text><text x="75" y="72" text-anchor="middle" class="s">競合・失敗時も記述</text></g><path class="p" d="M545 150H570"/>
   <g transform="translate(575 90)"><rect class="b" width="150" height="120" fill="#f3edff"/><text x="75" y="38" text-anchor="middle" class="t">小配置テスト</text><text x="75" y="72" text-anchor="middle" class="s">1～3人を手で追う</text></g><path class="p" d="M730 150H755"/>
   <g transform="translate(760 90)"><rect class="b" width="150" height="120" fill="#eaf8f7"/><text x="75" y="38" text-anchor="middle" class="t">反復比較</text><text x="75" y="72" text-anchor="middle" class="s">同じseed集合</text></g><path class="p" d="M915 150H940"/>
   <g transform="translate(945 90)"><rect class="b" width="135" height="120" fill="#ffecef"/><text x="67" y="38" text-anchor="middle" class="t">拡張</text><text x="67" y="72" text-anchor="middle" class="s">割合・人数</text><text x="67" y="96" text-anchor="middle" class="s">感度分析</text></g>
-  <text x="550" y="285" text-anchor="middle" class="t">平均完了時間だけでなく、分布・未完了率・極端に遅い試行も残す</text>
+  <text x="550" y="285" text-anchor="middle" class="t">平均完了時間だけでなく，分布・未完了率・極端に遅い試行も残す</text>
 </svg>

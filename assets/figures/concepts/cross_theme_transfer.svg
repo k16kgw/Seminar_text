@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1050" height="500" viewBox="0 0 1050 500" role="img" aria-labelledby="title desc">
-  <title id="title">4テーマから研究方法を相互に借りる</title><desc id="desc">中央の共通研究サイクルを囲んで、放熱、模様、乗降、関係モデルから借りられる考え方を示す。</desc>
+  <title id="title">4テーマから研究方法を相互に借りる</title><desc id="desc">中央の共通研究サイクルを囲んで，放熱，模様，乗降，関係モデルから借りられる考え方を示す．</desc>
   <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0v6l8-3z" fill="#50677b"/></marker><style>.t{font:19px sans-serif;fill:#20364a}.s{font:15px sans-serif;fill:#52677a}.p{stroke:#50677b;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
   <rect width="1050" height="500" fill="#fbfdff"/>
-  <text x="525" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">題材が違っても、研究の道具は相互に移せる</text>
+  <text x="525" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">題材が違っても，研究の道具は相互に移せる</text>
   <g transform="translate(380 165)"><rect width="290" height="165" rx="28" fill="#edf3f8" stroke="#5f788d" stroke-width="3"/><text x="145" y="45" text-anchor="middle" class="t">自分の卒業研究</text><text x="145" y="83" text-anchor="middle" class="s">問い → 最小モデル → 比較</text><text x="145" y="111" text-anchor="middle" class="s">→ 評価指標 → 検証 → 限界</text><text x="145" y="143" text-anchor="middle" class="s">必要なら前の段階へ戻る</text></g>
   <g transform="translate(45 85)"><rect width="250" height="120" rx="16" fill="#ffe9e1" stroke="#c76848" stroke-width="2"/><text x="125" y="35" text-anchor="middle" class="t">放熱</text><text x="125" y="70" text-anchor="middle" class="s">公平な比較条件</text><text x="125" y="95" text-anchor="middle" class="s">格子収束・収支</text></g>
   <g transform="translate(755 85)"><rect width="250" height="120" rx="16" fill="#eee8ff" stroke="#7558a8" stroke-width="2"/><text x="125" y="35" text-anchor="middle" class="t">模様</text><text x="125" y="70" text-anchor="middle" class="s">見た目を特徴量へ</text><text x="125" y="95" text-anchor="middle" class="s">パラメータ地図</text></g>

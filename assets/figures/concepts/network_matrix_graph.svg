@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1050" height="430" viewBox="0 0 1050 430" role="img" aria-labelledby="title desc">
   <title id="title">有向グラフと隣接行列の対応</title>
-  <desc id="desc">行列要素Aijを頂点jから頂点iへの影響と定義し、3頂点の矢印と行列の非零成分を対応させる。</desc>
+  <desc id="desc">行列要素Aijを頂点jから頂点iへの影響と定義し，3頂点の矢印と行列の非零成分を対応させる．</desc>
   <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#405a71"/></marker><style>.t{font:20px sans-serif;fill:#21364b}.s{font:16px sans-serif;fill:#52677a}.e{stroke:#405a71;stroke-width:4;fill:none;marker-end:url(#a)}</style></defs>
   <rect width="1050" height="430" fill="#fbfdff"/>
   <text x="525" y="38" text-anchor="middle" style="font:700 26px sans-serif;fill:#173451">Aᵢⱼ は「頂点 j から頂点 i へ入る影響」</text>
@@ -23,5 +23,5 @@
     <text x="235" y="292" text-anchor="middle" class="s">第1行は「頂点1へ入る影響」</text>
   </g>
   <path d="M455 240H490" class="e"/>
-  <text x="525" y="405" text-anchor="middle" class="t">非零要素 Aᵢⱼ を見つけたら、矢印 j → i を描く</text>
+  <text x="525" y="405" text-anchor="middle" class="t">非零要素 Aᵢⱼ を見つけたら，矢印 j → i を描く</text>
 </svg>
