@@ -232,7 +232,7 @@ def cover(prs: Presentation) -> None:
 
 
 def learning_path(prs: Presentation) -> None:
-    slide = base_slide(prs, "教材を研究の足場として使う", "learning_path.svg")
+    slide = base_slide(prs, "基礎学習から卒業研究へ進む", "learning_path.svg")
     pipeline(slide, [
         ("卒研の準備", "研究設計・各モデルの入口"),
         ("基礎モデル", "最小の式・標準設定"),
