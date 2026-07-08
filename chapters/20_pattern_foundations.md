@@ -188,6 +188,6 @@ $f=g=0$ とすると，2つの量はそれぞれ拡散する．高い場所か�
 
 ## 参考文献・キーワード
 
-- Turing, The Chemical Basis of Morphogenesis, 1952.
-- Strogatz, Nonlinear Dynamics and Chaos.
+- Turing, *Phil. Trans. R. Soc. B* (1952) {cite}`turing1952chemical`
+- Strogatz, *Nonlinear Dynamics and Chaos* {cite}`strogatz2015nonlinear`
 - キーワード：2成分ODE，場，反応項，拡散項，ラプラシアン，初期擾乱，周期境界，空間パターン

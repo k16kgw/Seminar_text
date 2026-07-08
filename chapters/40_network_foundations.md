@@ -207,6 +207,6 @@ $A$ の最大実部を持つ固有値を使うと，結合 $\beta$ を強くし�
 
 ## 参考文献・キーワード
 
-- Strogatz, Nonlinear Dynamics and Chaos.
-- Newman, Networks: An Introduction.
+- Strogatz, *Nonlinear Dynamics and Chaos* {cite}`strogatz2015nonlinear`
+- Newman, *Networks: An Introduction* {cite}`newman2010networks`
 - キーワード：状態ベクトル，隣接行列，有向グラフ，行列積，固有値，安定性，頂点状態，辺状態

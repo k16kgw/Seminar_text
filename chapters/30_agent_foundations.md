@@ -187,5 +187,5 @@ Notebookでは，各状態について2人の位置が重複していないこ�
 
 ## 参考文献・キーワード
 
-- Helbing and Molnár, Social force model for pedestrian dynamics, 1995.
+- Helbing & Molnár, *Phys. Rev. E* (1995) {cite}`helbing1995social`
 - キーワード：離散時間，セルオートマトン，近傍，排他則，一斉更新，競合解決，乱数seed，不変量，デッドロック

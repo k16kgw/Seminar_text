@@ -31,24 +31,24 @@ EXPORTS: dict[str, list[tuple[str, str]]] = {
         ("one-step", "40_one_step_update.png"),
     ],
     "11_stegosaurus_heat_1d_fin.ipynb": [
-        ("cell-0008", "11_fin_temperature.png"),
-        ("cell-0010", "11_fin_performance.png"),
+        ("fin-temperature", "11_fin_temperature.png"),
+        ("fin-performance", "11_fin_performance.png"),
     ],
     "12_stegosaurus_single_plate_2d.ipynb": [
         ("visualization", "12_single_plate_temperature.png"),
         ("parameter", "12_plate_h_sensitivity.png"),
     ],
     "21_reaction_diffusion_gray_scott.ipynb": [
-        ("cell-0039", "21_gray_scott_pattern.png"),
-        ("cell-0041", "21_gray_scott_parameter_comparison.png"),
+        ("gray-scott-pattern", "21_gray_scott_pattern.png"),
+        ("gray-scott-comparison", "21_gray_scott_parameter_comparison.png"),
     ],
     "22_snake_pattern_features.ipynb": [
         ("patterns", "22_synthetic_patterns.png"),
         ("spectrum", "22_pattern_spectra.png"),
     ],
     "31_train_boarding_ca.ipynb": [
-        ("cell-0067", "31_boarding_states.png"),
-        ("cell-0069", "31_boarding_count_sweep.png"),
+        ("boarding-states", "31_boarding_states.png"),
+        ("boarding-count-sweep", "31_boarding_count_sweep.png"),
     ],
     "32_stochastic_simulation_repeats.ipynb": [
         ("trace", "32_bottleneck_trace.png"),
