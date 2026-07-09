@@ -19,3 +19,5 @@ __pycache__/
 
 # Node (only mystmd is global; keep local node_modules ignored just in case)
 node_modules/
+
+.claude
