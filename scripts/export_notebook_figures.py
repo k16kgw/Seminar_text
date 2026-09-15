@@ -7,6 +7,7 @@ Notebookの再実行後も同じファイル名で章から参照できるよう
 
 from __future__ import annotations
 
+import argparse
 import base64
 import json
 from pathlib import Path
@@ -35,6 +36,7 @@ EXPORTS: dict[str, list[tuple[str, str]]] = {
         ("fin-performance", "11_fin_performance.png"),
     ],
     "12_stegosaurus_single_plate_2d.ipynb": [
+        ("grid-layout", "12_cell_center_boundary.png"),
         ("visualization", "12_single_plate_temperature.png"),
         ("parameter", "12_plate_h_sensitivity.png"),
     ],
@@ -76,9 +78,14 @@ def first_png_output(cell: dict) -> str:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--notebooks', nargs='+', choices=sorted(EXPORTS),
+                        help='指定したNotebookだけを出力する．省略時はすべて出力する．')
+    args = parser.parse_args()
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     exported = 0
-    for notebook_name, specs in EXPORTS.items():
+    for notebook_name in args.notebooks or EXPORTS:
+        specs = EXPORTS[notebook_name]
         path = ROOT / "notebooks" / notebook_name
         notebook = json.loads(path.read_text(encoding="utf-8"))
         cells = {cell.get("id"): cell for cell in notebook["cells"]}
@@ -87,7 +94,11 @@ def main() -> None:
                 raise KeyError(f"Missing cell id={cell_id} in {notebook_name}")
             png_data = first_png_output(cells[cell_id])
             output_path = OUTPUT_DIR / output_name
-            output_path.write_bytes(base64.b64decode(png_data))
+            image_bytes = base64.b64decode(png_data)
+            output_path.write_bytes(image_bytes)
+            if output_name == '12_single_plate_temperature.png':
+                # 従来の保存先も章掲載版と同じ画像に保つ．
+                (ROOT / 'assets' / 'figures' / output_name).write_bytes(image_bytes)
             print(f"Saved: {output_path.relative_to(ROOT)}")
             exported += 1
     print(f"OK: exported {exported} notebook figures")

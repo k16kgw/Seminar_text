@@ -6,12 +6,18 @@
 | --- | --- |
 | `concepts/*.png` | `concepts/concept_diagrams_editable.pptx`．各要素をPowerPoint図形として編集できる |
 | `notebook/*.png` | 対応する `notebooks/*.ipynb`．グラフの計算条件，軸，配色をNotebook上で変更する |
-| `12_single_plate_temperature.png` | `notebooks/12_stegosaurus_single_plate_2d.ipynb` の保存セル |
+| `12_single_plate_temperature.png` | `notebook/12_single_plate_temperature.png` と同じ図．書き出しスクリプトで同時に更新する |
 
 Notebook図を更新した後は，次を実行して章掲載用画像を書き出す．
 
 ```bash
 python scripts/export_notebook_figures.py
+```
+
+11・12章の図だけを更新する場合は，対象を指定できる．セル中心と境界面の模式図も，12のNotebook内の描画コードを編集して再生成する．
+
+```bash
+python scripts/export_notebook_figures.py --notebooks 11_stegosaurus_heat_1d_fin.ipynb 12_stegosaurus_single_plate_2d.ipynb
 ```
 
 概念図のPowerPointを再生成する方法は，[concepts/README.md](concepts/README.md)を参照する．

@@ -75,6 +75,7 @@ NOTEBOOK_FIGURES = [
     "40_one_step_update.png",
     "11_fin_temperature.png",
     "11_fin_performance.png",
+    "12_cell_center_boundary.png",
     "12_single_plate_temperature.png",
     "12_plate_h_sensitivity.png",
     "21_gray_scott_pattern.png",
