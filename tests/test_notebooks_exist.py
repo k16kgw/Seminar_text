@@ -135,7 +135,7 @@ def test_chapter_links_to_notebook(name: str) -> None:
         "43_love_research_roadmap.md",
         "50_synthesis.md",
     }:
-        pytest.skip("index・準備資料・卒研ロードマップ・振り返りは notebook を持たない")
+        pytest.skip("index・準備資料・卒研ロードマップ・成果整理は notebook を持たない")
     path = ROOT / "chapters" / name
     text = path.read_text(encoding="utf-8")
     assert "../notebooks/" in text, f"No notebook link in chapter {name}"
