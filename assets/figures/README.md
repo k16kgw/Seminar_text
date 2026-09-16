@@ -32,4 +32,10 @@ python scripts/export_notebook_figures.py --notebooks 21_reaction_diffusion_gray
 python scripts/export_notebook_figures.py --notebooks 31_train_boarding_ca.ipynb 32_stochastic_simulation_repeats.ipynb
 ```
 
+41・42章の時系列，相図，グラフ，安定性境界，一時的増幅の図は，対応Notebookの計算・描画コードから再生成する．点で重ねた参照解も同じセルで変更できる．
+
+```bash
+python scripts/export_notebook_figures.py --notebooks 41_love_dynamics_two_person.ipynb 42_love_dynamics_network.ipynb
+```
+
 概念図のPowerPointを再生成する方法は，[concepts/README.md](concepts/README.md)を参照する．

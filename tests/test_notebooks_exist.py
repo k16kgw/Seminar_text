@@ -92,9 +92,11 @@ NOTEBOOK_FIGURES = [
     "32_repeat_distribution.png",
     "41_two_person_timeseries.png",
     "41_two_person_phase_portrait.png",
+    "41_transient_growth.png",
     "42_network_graph.png",
     "42_network_timeseries.png",
     "42_network_stability.png",
+    "42_chain_transient.png",
 ]
 
 

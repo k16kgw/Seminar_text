@@ -63,11 +63,13 @@ EXPORTS: dict[str, list[tuple[str, str]]] = {
     "41_love_dynamics_two_person.ipynb": [
         ("solve", "41_two_person_timeseries.png"),
         ("phase", "41_two_person_phase_portrait.png"),
+        ("transient", "41_transient_growth.png"),
     ],
     "42_love_dynamics_network.ipynb": [
         ("graph", "42_network_graph.png"),
         ("simulation", "42_network_timeseries.png"),
         ("coupling", "42_network_stability.png"),
+        ("chain-transient", "42_chain_transient.png"),
     ],
 }
 
