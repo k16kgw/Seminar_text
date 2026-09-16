@@ -51,10 +51,12 @@ EXPORTS: dict[str, list[tuple[str, str]]] = {
         ("spectrum", "22_pattern_spectra.png"),
     ],
     "31_train_boarding_ca.ipynb": [
+        ("grid-distance", "31_grid_distance.png"),
         ("boarding-states", "31_boarding_states.png"),
         ("boarding-count-sweep", "31_boarding_count_sweep.png"),
     ],
     "32_stochastic_simulation_repeats.ipynb": [
+        ("censoring", "32_censoring_comparison.png"),
         ("trace", "32_bottleneck_trace.png"),
         ("distribution", "32_repeat_distribution.png"),
     ],

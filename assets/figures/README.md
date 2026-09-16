@@ -26,4 +26,10 @@ python scripts/export_notebook_figures.py --notebooks 11_stegosaurus_heat_1d_fin
 python scripts/export_notebook_figures.py --notebooks 21_reaction_diffusion_gray_scott.ipynb 22_snake_pattern_features.ipynb
 ```
 
+31・32章の格子・距離場，占有率，反復分布，打切り比較も，対応Notebookを編集・実行してから書き出す．
+
+```bash
+python scripts/export_notebook_figures.py --notebooks 31_train_boarding_ca.ipynb 32_stochastic_simulation_repeats.ipynb
+```
+
 概念図のPowerPointを再生成する方法は，[concepts/README.md](concepts/README.md)を参照する．
