@@ -20,4 +20,10 @@ python scripts/export_notebook_figures.py
 python scripts/export_notebook_figures.py --notebooks 11_stegosaurus_heat_1d_fin.ipynb 12_stegosaurus_single_plate_2d.ipynb
 ```
 
+21・22章の成長率，濃度場，連結成分，FFTスペクトルの図も，対応Notebookの計算・描画コードが編集元である．Notebookを実行した後，次で章掲載版を更新する．
+
+```bash
+python scripts/export_notebook_figures.py --notebooks 21_reaction_diffusion_gray_scott.ipynb 22_snake_pattern_features.ipynb
+```
+
 概念図のPowerPointを再生成する方法は，[concepts/README.md](concepts/README.md)を参照する．

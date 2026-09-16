@@ -41,10 +41,12 @@ EXPORTS: dict[str, list[tuple[str, str]]] = {
         ("parameter", "12_plate_h_sensitivity.png"),
     ],
     "21_reaction_diffusion_gray_scott.ipynb": [
+        ("dispersion", "21_linear_growth_rates.png"),
         ("gray-scott-pattern", "21_gray_scott_pattern.png"),
         ("gray-scott-comparison", "21_gray_scott_parameter_comparison.png"),
     ],
     "22_snake_pattern_features.ipynb": [
+        ("boundary-demo", "22_boundary_components.png"),
         ("patterns", "22_synthetic_patterns.png"),
         ("spectrum", "22_pattern_spectra.png"),
     ],
