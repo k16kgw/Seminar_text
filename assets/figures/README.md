@@ -6,6 +6,7 @@
 | --- | --- |
 | `concepts/*.png` | `concepts/concept_diagrams_editable.pptx`．各要素をPowerPoint図形として編集できる |
 | `notebook/*.png` | 対応する `notebooks/*.ipynb`．グラフの計算条件，軸，配色をNotebook上で変更する |
+| `learning/*.png` | 同名の編集可能なSVGと `scripts/generate_heat_learning_figures.py`．11～13章の熱収支・境界条件・切断セル・比較設計を描く |
 | `12_single_plate_temperature.png` | `notebook/12_single_plate_temperature.png` と同じ図．書き出しスクリプトで同時に更新する |
 
 Notebook図を更新した後は，次を実行して章掲載用画像を書き出す．
@@ -36,6 +37,12 @@ python scripts/export_notebook_figures.py --notebooks 31_train_boarding_ca.ipynb
 
 ```bash
 python scripts/export_notebook_figures.py --notebooks 41_love_dynamics_two_person.ipynb 42_love_dynamics_network.ipynb
+```
+
+11～13章に追加した学習用模式図は，研究結果の図とは分けて管理する．SVGを直接編集するか，次の描画コードからPNGとSVGを再生成する．
+
+```bash
+python scripts/generate_heat_learning_figures.py
 ```
 
 概念図のPowerPointを再生成する方法は，[concepts/README.md](concepts/README.md)を参照する．
