@@ -55,7 +55,7 @@ title: 反応拡散の基礎：パターン生成
 
 ### 平衡点のまわりで線形化する
 
-$f(u^*,v^*)=g(u^*,v^*)=0$ を満たす空間一様な平衡点を考える．反応の**{abbr}`ヤコビ行列(反応項を各変数で偏微分して並べた行列)`** を
+$f(u^*,v^*)=g(u^*,v^*)=0$ を満たす空間一様な平衡点を考える．反応の **{abbr}`ヤコビ行列(反応項を各変数で偏微分して並べた行列)`** を
 
 ```{math}
 J=\left.\begin{pmatrix}f_u&f_v\\g_u&g_v\end{pmatrix}\right|_{(u^*,v^*)}
@@ -64,7 +64,7 @@ J=\left.\begin{pmatrix}f_u&f_v\\g_u&g_v\end{pmatrix}\right|_{(u^*,v^*)}
 
 とする．ODEでは $J$ の固有値の実部がともに負なら，十分小さな擾乱は減衰する．2変数の場合，その条件は $\operatorname{tr}J=a+d<0$ と $\det J=ad-bc>0$ である．
 
-空間依存する擾乱を $\mathbf{z}\exp(\lambda t+i\mathbf{q}\cdot\mathbf{x})$ と置く．ここで $i$ は虚数単位，$\mathbf{q}$ は**{abbr}`角波数ベクトル(空間に沿った位相変化を単位長さ当たりのラジアンで表すベクトル)`** ，$q=|\mathbf{q}|$ である．$\Delta e^{i\mathbf{q}\cdot\mathbf{x}}=-q^2e^{i\mathbf{q}\cdot\mathbf{x}}$ なので，線形化した式は
+空間依存する擾乱を $\mathbf{z}\exp(\lambda t+i\mathbf{q}\cdot\mathbf{x})$ と置く．ここで $i$ は虚数単位，$\mathbf{q}$ は **{abbr}`角波数ベクトル(空間に沿った位相変化を単位長さ当たりのラジアンで表すベクトル)`** ，$q=|\mathbf{q}|$ である．$\Delta e^{i\mathbf{q}\cdot\mathbf{x}}=-q^2e^{i\mathbf{q}\cdot\mathbf{x}}$ なので，線形化した式は
 
 ```{math}
 \lambda\mathbf{z}=M(q)\mathbf{z},\qquad
@@ -122,7 +122,7 @@ $D_u=D_v=D$ なら $M(q)=J-Dq^2I$ であり，全固有値の実部は $Dq^2$ �
 \frac{\partial v}{\partial t}=D_v\Delta v+uv^2-(F+k)v
 ```
 
-$u$ は供給される基質，$v$ は生成物である．反応 $U+2V\to3V$ に対応する $uv^2$ は，$u$ を減らして同量の $v$ を増やす**{abbr}`自己触媒反応(生成物が自身の生成を促進する反応)`** を表す．$F(1-u)$ は基質の供給と流出，$-Fv$ は供給に伴う $v$ の流出，$-kv$ は $v$ が別の物質へ変化して除去される効果である．$k$ だけでなく $F$ も $v$ の減少に寄与する．
+$u$ は供給される基質，$v$ は生成物である．反応 $U+2V\to3V$ に対応する $uv^2$ は，$u$ を減らして同量の $v$ を増やす **{abbr}`自己触媒反応(生成物が自身の生成を促進する反応)`** を表す．$F(1-u)$ は基質の供給と流出，$-Fv$ は供給に伴う $v$ の流出，$-kv$ は $v$ が別の物質へ変化して除去される効果である．$k$ だけでなく $F$ も $v$ の減少に寄与する．
 
 この式の $u,v,t,x,y,D_u,D_v,F,k$ は無次元量である．Notebookの時刻4000を4000秒，1格子間隔を1 mmと読んではいけない．実長と比較するには，別途長さの対応を定める必要がある．
 
